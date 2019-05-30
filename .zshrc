@@ -55,6 +55,45 @@ nSquashCommit(){
 }
 
 ###########################  Oh my god, it's so fuzzy I'm gonna die ############################
+
+fcs() {
+  local commits commit
+  commits=$(git log --color=always --pretty=oneline --abbrev-commit --reverse) &&
+  commit=$(echo "$commits" | fzf --tac +s +m -e --ansi --reverse) &&
+  echo -n $(echo "$commit" | sed "s/ .*//")
+}
+
+# fuzzy checkout commit
+fchc() {
+  local commits commit
+  commits=$(git log --pretty=oneline --abbrev-commit --reverse) &&
+  commit=$(echo "$commits" | fzf --tac +s +m -e) &&
+  git checkout $(echo "$commit" | sed "s/ .*//")
+}
+
+alias glNoGraph='git log --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr% C(auto)%an" "$@"'
+_gitLogLineToHash="echo {} | grep -o '[a-f0-9]\{7\}' | head -1"
+_viewGitLogLine="$_gitLogLineToHash | xargs -I % sh -c 'git show --color=always % | diff-so-fancy'"
+
+# fchc_preview - checkout commit with diff previews
+fchc_preview() {
+  local commit
+  commit=$( glNoGraph |
+    fzf --no-sort --reverse --tiebreak=index --no-multi \
+        --ansi --preview="$_viewGitLogLine" ) &&
+  git checkout $(echo "$commit" | sed "s/ .*//")
+}
+
+# fs_preview - git commit browser with previews
+fs_preview() {
+    glNoGraph |
+        fzf --no-sort --reverse --tiebreak=index --no-multi \
+            --ansi --preview="$_viewGitLogLine" \
+                --header "enter to view, alt-y to copy hash" \
+                --bind "enter:execute:$_viewGitLogLine   | less -R" \
+                --bind "alt-y:execute:$_gitLogLineToHash | xclip"
+}
+
 fvim() {
 	file=$(ll | fzf | awk '{print $NF}')
 	vim $file
@@ -70,8 +109,8 @@ fman() {
  # find-in-file: - usage: fif <searchTerm>
 fif() { rg --files-with-matches --no-messages $1 | fzf --preview "highlight -O ansi -l {} 2> /dev/null | rg --colors 'match:bg:yellow' --ignore-case --pretty --context 10 $1 || rg --ignore-case --pretty --context 10 $1 {}" }
 
-#fuzzy checkout git branch local or remote
-fch() {
+#fuzzy checkout git ref (branch/tag) local or remote
+fchr() {
   local branches branch
   branches=$(git branch --all | grep -v HEAD) &&
   branch=$(echo "$branches" |
@@ -79,8 +118,8 @@ fch() {
   git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
 }
 
-# fco_preview - checkout git branch/tag, with a preview showing the commits between the tag/branch and HEAD
-fch_preview() {
+# fchr_preview - checkout git ref, with a preview showing the commits between the tag/branch and HEAD
+fchr_preview() {
   local tags branches target
   tags=$(git tag | awk '{print "\x1b[31;1mtag\x1b[m\t" $1}') || return
   branches=$(git branch --all | grep -v HEAD |
