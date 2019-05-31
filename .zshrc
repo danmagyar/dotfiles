@@ -57,18 +57,19 @@ nSquashCommit(){
 ###########################  Oh my god, it's so fuzzy I'm gonna die ############################
 
 fcs() {
-  local commits commit
-  commits=$(git log --color=always --pretty=oneline --abbrev-commit --reverse) &&
-  commit=$(echo "$commits" | fzf --tac +s +m -e --ansi --reverse) &&
-  echo -n $(echo "$commit" | sed "s/ .*//")
+	PROMPT_EOL_MARK=''
+	local commits commit
+	commits=$(git log --color=always --pretty=oneline --abbrev-commit --reverse) &&
+	commit=$(echo "$commits" | fzf --tac +s +m -e --ansi --reverse) &&
+	echo -n $(echo "$commit" | sed "s/ .*//" | sed 's|%||')
 }
 
 # fuzzy checkout commit
 fchc() {
-  local commits commit
-  commits=$(git log --pretty=oneline --abbrev-commit --reverse) &&
-  commit=$(echo "$commits" | fzf --tac +s +m -e) &&
-  git checkout $(echo "$commit" | sed "s/ .*//")
+	local commits commit
+	commits=$(git log --pretty=oneline --abbrev-commit --reverse) &&
+	commit=$(echo "$commits" | fzf --tac +s +m -e) &&
+	git checkout $(echo "$commit" | sed "s/ .*//")
 }
 
 alias glNoGraph='git log --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr% C(auto)%an" "$@"'
@@ -77,21 +78,21 @@ _viewGitLogLine="$_gitLogLineToHash | xargs -I % sh -c 'git show --color=always 
 
 # fchc_preview - checkout commit with diff previews
 fchc_preview() {
-  local commit
-  commit=$( glNoGraph |
-    fzf --no-sort --reverse --tiebreak=index --no-multi \
-        --ansi --preview="$_viewGitLogLine" ) &&
-  git checkout $(echo "$commit" | sed "s/ .*//")
+	local commit
+	commit=$( glNoGraph |
+		fzf --no-sort --reverse --tiebreak=index --no-multi \
+			--ansi --preview="$_viewGitLogLine" ) &&
+	git checkout $(echo "$commit" | sed "s/ .*//")
 }
 
 # fs_preview - git commit browser with previews
 fs_preview() {
-    glNoGraph |
-        fzf --no-sort --reverse --tiebreak=index --no-multi \
-            --ansi --preview="$_viewGitLogLine" \
-                --header "enter to view, alt-y to copy hash" \
-                --bind "enter:execute:$_viewGitLogLine   | less -R" \
-                --bind "alt-y:execute:$_gitLogLineToHash | xclip"
+	glNoGraph |
+	fzf --no-sort --reverse --tiebreak=index --no-multi \
+		--ansi --preview="$_viewGitLogLine" \
+		--header "enter to view, alt-y to copy hash" \
+		--bind "enter:execute:$_viewGitLogLine   | less -R" \
+		--bind "alt-y:execute:$_gitLogLineToHash | xclip"
 }
 
 fvim() {
