@@ -1,8 +1,9 @@
 ################### ZSH, iterm2 #############
 
-export ZSH=/Users/danielmagyar/.oh-my-zsh
+export ZSH='/Users/danielmagyar/.oh-my-zsh'
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
-ZSH_THEME="agnoster"
+#ZSH_THEME="agnoster"
+ZSH_THEME="powerlevel9k/powerlevel9k"
 plugins=(
   git
   git-prompt
