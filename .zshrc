@@ -7,7 +7,7 @@ export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
 POWERLEVEL9K_MODE='nerdfont-complete'
 POWERLEVEL9K_VIRTUALENV_BACKGROUND='purple'
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(virtualenv dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs time)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs time date)
 
 ZSH_THEME="powerlevel9k/powerlevel9k"
 plugins=(
