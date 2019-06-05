@@ -34,9 +34,8 @@ alias cht.sh='~/bin/cht.sh'
 alias hcat='highlight --out-format=ansi' #print file with syntax highlighting
 alias mkd='mkdir -pv'
 dotcmd(){
-	pushd ~/gitrepos/dotfiles
-	command $@
-	popd
+	#cd in a subshell, to execute a command locally
+	(cd ~/gitrepos/dotfiles && command $@)
 }
 
 
