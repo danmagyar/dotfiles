@@ -44,6 +44,7 @@ alias s='git show '
 alias ch='git checkout '
 alias cam='git commit -a -m '
 alias gpr='git pull --rebase'
+alias c='git commit -a -v'
 alias grv='git remote -v'
 alias d='git diff '
 alias dg='git difftool --gui --no-prompt '
@@ -101,11 +102,7 @@ fs_preview() {
 		--bind "alt-y:execute:$_gitLogLineToHash | xclip"
 }
 
-fvim() {
-	file=$(ll | fzf | awk '{print $NF}')
-	vim $file
-}
-
+alias fvim='vim $(fzf)'
 alias fhistory='history | fzf +s --tac'
 
 # fuzzy find in man pages
