@@ -1,8 +1,7 @@
 set number		" show linenumbers
 set relativenumber	" make linenumbers relative
 
-" exterminatus to trailing whitespaces
-autocmd BufWritePre * :%s/\s\+$//e
+autocmd BufWritePre * :%s/\s\+$//e 	 " exterminatus to trailing whitespaces
 
 
 set hlsearch		" highlight search
@@ -33,6 +32,10 @@ set t_RV=               " http://bugs.debian.org/608242, http://groups.google.co
 
 
 colorscheme monokai
+
+" git commit opens vim in insert mode
+autocmd FileType gitcommit exec 'au VimEnter * startinsert'
+
 
 " lightline plugin
 let g:lightline = {
