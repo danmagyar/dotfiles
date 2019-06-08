@@ -14,6 +14,7 @@ plugins=(
   git
   git-prompt
   zsh-syntax-highlighting
+  fasd
 )
 
 
@@ -137,20 +138,14 @@ fchr_preview() {
 }
 
 
-################################################################## Autojump #############################################################3#####
-#Autojump installation:
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
-
-#Autojump j works with fuzzy find
-j(){
-    if [[ "$#" -ne 0 ]]; then
-        cd $(autojump $@)
-        return
-    fi
-    cd "$(autojump -s | sed '/_____/Q; s/^[0-9,.:]*\s*//' |  fzf --height 40% --reverse --inline-info)"
+################################################################## FASD #############################################################3#####
+alias j='fasd_cd -d '
+# fasd & fzf change directory - open best matched file using `fasd` if given argument, filter output of `fasd` using `fzf` else
+v() {
+    [ $# -gt 0 ] && fasd -f -e ${EDITOR} "$*" && return
+    local file
+    file="$(fasd -Rfl "$1" | fzf -1 -0 --no-sort +m)" && vim "${file}" || return 1
 }
-
-
 ############################################################### Todoist ######################################################################
 alias td='todoist --color'
 #todoist close and modify task using fzf
