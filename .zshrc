@@ -102,7 +102,7 @@ fs_preview() {
 		--bind "alt-y:execute:$_gitLogLineToHash | xclip"
 }
 
-alias fvim='vim $(fzf)'
+alias fvim='vim -p $(fzf -m)'
 alias fhistory='history | fzf +s --tac'
 
 # fuzzy find in man pages
