@@ -139,12 +139,11 @@ fchr_preview() {
 
 
 ################################################################## FASD #############################################################3#####
-alias j='fasd_cd -d '
 # fasd & fzf change directory - open best matched file using `fasd` if given argument, filter output of `fasd` using `fzf` else
-v() {
-    [ $# -gt 0 ] && fasd -f -e ${EDITOR} "$*" && return
-    local file
-    file="$(fasd -Rfl "$1" | fzf -1 -0 --no-sort +m)" && vim "${file}" || return 1
+vf() {
+   [ $# -gt 0 ] && fasd -f -e ${EDITOR} "$*" && return
+   local file
+   file="$(fasd -Rfl "$1" | fzf -1 -0 --no-sort +m)" && vim "${file}" || return 1
 }
 ############################################################### Todoist ######################################################################
 alias td='todoist --color'
