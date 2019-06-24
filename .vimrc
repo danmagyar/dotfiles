@@ -31,7 +31,7 @@ set nocompatible        " use vim defaults
 set t_RV=               " http://bugs.debian.org/608242, http://groups.google.com/group/vim_dev/browse_thread/thread/9770ea844cec3282
 
 
-colorscheme monokai
+
 
 " git commit opens vim in insert mode
 autocmd FileType gitcommit exec 'au VimEnter * startinsert'
@@ -68,8 +68,29 @@ Plug 'w0rp/ale'
 Plug 'junegunn/goyo.vim'
 Plug 'mtdl9/vim-log-highlighting'
 Plug 'zivyangll/git-blame.vim'
+Plug 'drewtempelmeyer/palenight.vim'
 call plug#end()
+
+set background=dark
+colorscheme palenight
+let g:lightline.colorscheme = 'palenight'
 let g:ale_set_highlights = 0
+
+" true colors support
+if (has("nvim"))
+  "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
+
+"For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
+"Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
+" < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
+if (has("termguicolors"))
+  set termguicolors
+endif
+
+" Italics for palenight color scheme
+let g:palenight_terminal_italics=1
 
 " fix lightline plugin
 set laststatus=2
