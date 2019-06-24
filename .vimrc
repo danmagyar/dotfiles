@@ -68,7 +68,9 @@ Plug 'junegunn/goyo.vim'
 Plug 'mtdl9/vim-log-highlighting'
 Plug 'zivyangll/git-blame.vim'
 Plug 'joshdick/onedark.vim'
+Plug 'sheerun/vim-polyglot'
 call plug#end()
+
 let g:ale_set_highlights = 0
 
 
@@ -107,7 +109,6 @@ let g:NERDTreeWinSize = 50
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
 nnoremap <silent> <F2> :NERDTreeFind<CR>
 noremap <F3> :NERDTreeToggle<CR>
-
 "" Make Nerdtree show .files by default
 let NERDTreeShowHidden=1
 hi Directory guifg=#FF0000 ctermfg=darkgreen
