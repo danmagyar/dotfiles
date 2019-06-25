@@ -1,5 +1,6 @@
 ################### ZSH, iterm2 #############
 
+export LC_ALL=en_US.UTF-8
 export ZSH='/Users/danielmagyar/.oh-my-zsh'
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
 #ZSH_THEME="agnoster"
