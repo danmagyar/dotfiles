@@ -20,7 +20,7 @@ set novisualbell        " turn off visual bell
 
 
 set backspace=indent,eol,start  " make that backspace key work the way it should
-
+set expandtab
 
 syntax on               " turn syntax highlighting on by default
 filetype on             " detect type of file
