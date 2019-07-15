@@ -32,14 +32,13 @@ alias a='atom'
 alias lookUpHistoryFor='history -i | grep'
 alias getHistoryBetween='fc -lf'
 alias ls='exa --long --header --links --git --time-style long-iso --all --color-scale'
-alias cht.sh='~/bin/cht.sh'
+alias chtsh='~/bin/cht.sh'
 alias hcat='highlight --out-format=ansi' #print file with syntax highlighting
 alias mkd='mkdir -pv'
 dotcmd(){
 	#cd in a subshell, to execute a command locally
 	(cd ~/gitrepos/dotfiles && command $@)
 }
-
 
 ######################  git aliases and utilities ################################
 alias s='git show '
@@ -54,6 +53,7 @@ alias plc="git log --full-history --graph --pretty=format:'%Cred%h%Creset -%C(ye
 alias pl="git log HEAD --full-history --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias reml="git log origin/master --full-history --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -20"
 alias prl="git reflog --format='%C(auto)%h %<|(20)%gd %C(blue)%cr%C(reset) %gs (%s)'"
+alias st='git status'
 
 #squashes the last n commit and creates a new commit
 #EXAMPLE: nSquashCommit 15
