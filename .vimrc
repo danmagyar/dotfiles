@@ -10,6 +10,23 @@ set showmatch           " jump to matches when entering regexp
 set ignorecase          " ignore case when searching
 set smartcase           " no ignorecase if Uppercase char present
 
+set autoread            " reload filesystem changes
+
+set clipboard=unnamed " yank into clipboard by default
+
+" surround with ", ' or delete the quatation
+:nnoremap <Leader>q" caw""<Esc>P
+:nnoremap <Leader>q' ciw''<Esc>P
+:nnoremap <Leader>q{ ciw{}<Esc>P
+:nnoremap <Leader>q} ciw{}<Esc>P
+:nnoremap <Leader>q[ ciw[]<Esc>P
+:nnoremap <Leader>q] ciw[[]<Esc>P
+:nnoremap <Leader>qd daW"=substitute(@@,"'\\\|\"","","g")<CR>P
+
+" quote shell variable properly,
+" e.g. $VAR --> \qv --> <doublequote>$VAR<doublequote>
+:nnoremap <Leader>qv F$xciw""<Esc>Pbi$<Esc>
+
 " turn on actual highlight on highlightsearch
 set cursorline
 hi CursorLine term=bold cterm=bold guibg=white
