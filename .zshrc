@@ -24,6 +24,7 @@ source ~/.iterm2_shell_integration.zsh
 source ~/gitrepos/dotfiles/scripts/zsh-interactive-cd.plugin.zsh
 source $ZSH/oh-my-zsh.sh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/gitrepos/opensource/pomodoro/pomodoro.sh
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
@@ -41,7 +42,7 @@ dotcmd(){
 }
 
 ######################  git aliases and utilities ################################
-alias s='git show '
+alias s='git show --format=fuller'
 alias ch='git checkout '
 alias cam='git commit -a -m '
 alias gpr='git pull --rebase'
