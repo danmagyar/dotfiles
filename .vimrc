@@ -87,6 +87,7 @@ Plug 'zivyangll/git-blame.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-fugitive'
+Plug 'AndrewRadev/linediff.vim'
 call plug#end()
 
 let g:ale_set_highlights = 0
