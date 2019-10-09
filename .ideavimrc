@@ -1,0 +1,18 @@
+set number		" show linenumbers
+set relativenumber	" make linenumbers relative
+set hlsearch		" highlight search
+set incsearch		" incremental search
+set showmatch           " jump to matches when entering regexp
+set ignorecase          " ignore case when searching
+set smartcase           " no ignorecase if Uppercase char present
+
+set autoread            " reload filesystem changes
+
+set clipboard=unnamed " yank into clipboard by default
+set cursorline
+hi CursorLine term=bold cterm=bold guibg=white
+
+
+set visualbell t_vb=    " turn off error beep/flash
+set novisualbell        " turn off visual bell
+
