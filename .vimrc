@@ -88,6 +88,7 @@ Plug 'joshdick/onedark.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-fugitive'
 Plug 'AndrewRadev/linediff.vim'
+Plug 'kshenoy/vim-signature'
 call plug#end()
 
 let g:ale_set_highlights = 0
