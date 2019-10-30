@@ -153,10 +153,13 @@ vf() {
    file="$(fasd -Rfl "$1" | fzf -1 -0 --no-sort +m)" && vim "${file}" || return 1
 }
 ############################################################### Todoist ######################################################################
-alias td='todoist --color'
-#todoist close and modify task using fzf
-alias tdc="todoist sync; todoist l | fzf | sed -r 's/p.*$//' | xargs todoist c"
+# closes a todoist task
+tddone() {
+         todoist list | fzf | awk '{print $1};' | xargs todoist close
+}
 
+alias td='todoist --color'
+alias tdc="todoist sync; todoist l | fzf | sed -r 's/p.*$//' | xargs todoist c"
 
 ######################################################### Cloudera specific utils ###########################################################
 source ~/gitrepos/cloudera-scrpits/cloudera-utils.sh
