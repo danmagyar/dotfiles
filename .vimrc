@@ -89,7 +89,11 @@ Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-fugitive'
 Plug 'AndrewRadev/linediff.vim'
 Plug 'kshenoy/vim-signature'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-notes'
 call plug#end()
+
+let g:notes_directories = ['~/notes']
 
 let g:ale_set_highlights = 0
 
