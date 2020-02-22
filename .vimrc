@@ -96,14 +96,22 @@ Plug 'AndrewRadev/linediff.vim'
 Plug 'kshenoy/vim-signature'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes'
+Plug 'unblevable/quick-scope'
 call plug#end()
 
 let g:notes_directories = ['~/notes']
 
 let g:ale_set_highlights = 0
 
-
 colorscheme onedark
+
+" unblevable/quick-scope: Trigger a highlight in the appropriate direction when pressing these keys:
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+
+highlight QuickScopePrimary cterm=underline,italic
+highlight QuickScopeSecondary cterm=underline,bold
+
+
 
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
 "If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
