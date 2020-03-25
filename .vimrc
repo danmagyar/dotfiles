@@ -15,17 +15,20 @@ set autoread            " reload filesystem changes
 set clipboard=unnamed " yank into clipboard by default
 
 " surround with ", ' or delete the quatation
-:nnoremap <Leader>q" caw""<Esc>P
+:nnoremap <Leader>q" ciw""<Esc>P
 :nnoremap <Leader>q' ciw''<Esc>P
 :nnoremap <Leader>q{ ciw{}<Esc>P
 :nnoremap <Leader>q} ciw{}<Esc>P
 :nnoremap <Leader>q[ ciw[]<Esc>P
-:nnoremap <Leader>q] ciw[[]<Esc>P
+:nnoremap <Leader>q] ciw[]<Esc>P
 :nnoremap <Leader>qd daW"=substitute(@@,"'\\\|\"","","g")<CR>P
 
 " quote shell variable properly,
 " e.g. $VAR --> \qv --> <doublequote>$VAR<doublequote>
 :nnoremap <Leader>qv F$xciw""<Esc>Pbi$<Esc>
+
+" fuzzy find and open file with Control+Shift+O
+:nnoremap <silent> <C-S-O> : Files<CR>
 
 " turn on actual highlight on highlightsearch
 set cursorline
@@ -97,6 +100,7 @@ Plug 'kshenoy/vim-signature'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes'
 Plug 'unblevable/quick-scope'
+Plug 'easymotion/vim-easymotion'
 call plug#end()
 
 let g:notes_directories = ['~/notes']
