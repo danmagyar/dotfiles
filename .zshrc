@@ -47,8 +47,13 @@ dotcmd(){
 }
 
 # switch to java version
-alias j8="export JAVA_HOME=`/usr/libexec/java_home -v 1.8`; java -version"
-alias j11="export JAVA_HOME=`/usr/libexec/java_home -v 11`; java -version"
+export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
+export JAVA_11_HOME=$(/usr/libexec/java_home -v11)
+alias j8='export JAVA_HOME=$JAVA_8_HOME'
+alias j11='export JAVA_HOME=$JAVA_11_HOME'
+
+#use java8 by default
+j8
 
 ######################  git aliases and utilities ################################
 alias s='git show --format=fuller'
