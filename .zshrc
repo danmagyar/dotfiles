@@ -119,8 +119,8 @@ fs_preview() {
 		--bind "alt-y:execute:$_gitLogLineToHash | xclip"
 }
 
-alias fvim='vim -p $(fzf -m)'
-alias fhistory='history | fzf +s --tac'
+alias vimfiles='vim -p $(fzf -m)'
+alias fhistory="history | fzf +s --tac" #| awk '{ s = ""; for (i = 2; i <= NF; i++) s = s $i " "; print s }'"
 
 # fuzzy find in man pages
 fman() {
@@ -156,7 +156,7 @@ fchr_preview() {
 
 ################################################################## FASD #############################################################3#####
 # fasd & fzf change directory - open best matched file using `fasd` if given argument, filter output of `fasd` using `fzf` else
-vf() {
+vimhistory() {
    [ $# -gt 0 ] && fasd -f -e ${EDITOR} "$*" && return
    local file
    file="$(fasd -Rfl "$1" | fzf -1 -0 --no-sort +m)" && vim "${file}" || return 1
