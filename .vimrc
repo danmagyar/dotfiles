@@ -101,6 +101,7 @@ Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes'
 Plug 'unblevable/quick-scope'
 Plug 'easymotion/vim-easymotion'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 call plug#end()
 
 let g:notes_directories = ['~/notes']
@@ -153,3 +154,12 @@ noremap <F3> :NERDTreeToggle<CR>
 "" Make Nerdtree show .files by default
 let NERDTreeShowHidden=1
 hi Directory guifg=#FF0000 ctermfg=darkgreen
+"" auto open NerdTree
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+"" close nerdtree automatically
+let NERDTreeQuitOnOpen = 1
+
+"" open nerdtree and select currently edited file by pressing `\v`
+nnoremap <silent> <Leader>v :NERDTreeFind<CR>
