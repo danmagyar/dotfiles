@@ -1,5 +1,4 @@
 ################### ZSH, iterm2 #############
-
 export LC_ALL=en_US.UTF-8
 export ZSH='/Users/danielmagyar/.oh-my-zsh'
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
@@ -43,13 +42,15 @@ source ~/.bashrc
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # misc
-alias a='atom'
 alias lookUpHistoryFor='history -i | grep'
 alias getHistoryBetween='fc -lf'
 alias ls='exa --long --header --links --git --time-style long-iso --all --color-scale'
 alias chtsh='~/bin/cht.sh'
 alias hcat='highlight --out-format=ansi' #print file with syntax highlighting
 alias mkd='mkdir -pv'
+alias cp='cp -v' # verbose copy
+alias mv='mv -v' # verbose move
+alias rm='rm -v' # verbose remove
 dotcmd(){
 	#cd in a subshell, to execute a command locally
 	(cd ~/gitrepos/dotfiles && command $@)
