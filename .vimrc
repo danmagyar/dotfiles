@@ -9,6 +9,7 @@ set incsearch		" incremental search
 set showmatch           " jump to matches when entering regexp
 set ignorecase          " ignore case when searching
 set smartcase           " no ignorecase if Uppercase char present
+set foldmethod=syntax   " enable folding e.g a json array or a python method
 
 set autoread            " reload filesystem changes
 
