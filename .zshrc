@@ -97,7 +97,6 @@ function chnext() {
 }
 
 #squashes the last n commit and creates a new commit
-#EXAMPLE: nSquashCommit 15
 nSquashCommit(){
         git reset --hard HEAD~$1
         git merge --squash HEAD@{1}
@@ -143,6 +142,18 @@ fs_preview() {
 		--header "enter to view, alt-y to copy hash" \
 		--bind "enter:execute:$_viewGitLogLine   | less -R" \
 		--bind "alt-y:execute:$_gitLogLineToHash | xclip"
+}
+
+# fuzzy git diff, showing files changed on the left, changed lines on the right in preview
+fs() {
+  preview="git show $@ --color=always -- {-1}"
+  git show $@ --name-only | fzf --multi --ansi --preview $preview
+}
+
+# fuzzy git diff, showing files changed on the left, changed lines on the right in preview
+fd() {
+  preview="git diff $@ --color=always -- {-1}"
+  git diff $@ --name-only | fzf --multi --ansi --preview $preview
 }
 
 alias vimfiles='vim -p $(fzf -m)'
