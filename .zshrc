@@ -173,7 +173,7 @@ fchr() {
   branches=$(git branch --all | grep -v HEAD) &&
   branch=$(echo "$branches" |
            fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
-  git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
+  git checkout -B $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
 }
 
 # fchr_preview - checkout git ref, with a preview showing the commits between the tag/branch and HEAD
