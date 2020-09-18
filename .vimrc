@@ -28,7 +28,10 @@ set clipboard=unnamed " yank into clipboard by default
 :nnoremap <Leader>qv F$xciw""<Esc>Pbi$<Esc>
 
 " fuzzy find and open file with Control+Shift+O
-:nnoremap <silent> <C-S-O> : Files<CR>
+" :nnoremap <silent> <C-S-O> : Files<CR>
+
+" prettyfy json with Control+Shift+P
+:nnoremap <silent> <C-S-P> : %!python -m json.tool<CR>
 
 " turn on actual highlight on highlightsearch
 set cursorline
