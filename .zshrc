@@ -157,7 +157,9 @@ fd() {
 }
 
 alias vimfiles='vim -p $(fzf -m)'
-alias fhistory="history | fzf +s --tac" #| awk '{ s = ""; for (i = 2; i <= NF; i++) s = s $i " "; print s }'"
+
+#fuzzy history: show history with timestamps and print the chosen entry without timestamps
+alias fhistory="history -i | fzf +s --tac | cut -d' ' -f5-"
 
 # fuzzy find in man pages
 fman() {
