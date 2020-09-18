@@ -86,6 +86,16 @@ alias reml="git log origin/master --full-history --all --graph --pretty=format:'
 alias prl="git reflog --format='%C(auto)%h %<|(20)%gd %C(blue)%cr%C(reset) %gs (%s)'"
 alias st='git status'
 
+# checkout previous commit
+function chprev() {
+        git checkout HEAD~
+}
+
+# checkout next commit
+function chnext() {
+    git log --reverse --pretty=%H master | grep -A 1 $(git rev-parse HEAD) | tail -n1 | xargs git checkout
+}
+
 #squashes the last n commit and creates a new commit
 #EXAMPLE: nSquashCommit 15
 nSquashCommit(){
