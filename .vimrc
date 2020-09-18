@@ -98,6 +98,7 @@ Plug 'zivyangll/git-blame.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-fugitive'
+Plug 'k0kubun/vim-open-github'
 Plug 'AndrewRadev/linediff.vim'
 Plug 'kshenoy/vim-signature'
 Plug 'xolox/vim-misc'
@@ -107,6 +108,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 call plug#end()
 
+let g:github_enterprise_urls = ['https://github.infra.cloudera.com']
 let g:notes_directories = ['~/notes']
 
 let g:ale_set_highlights = 0
