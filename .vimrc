@@ -1,4 +1,3 @@
-set number		" show linenumbers
 set relativenumber	" make linenumbers relative
 
 autocmd BufWritePre * :%s/\s\+$//e 	 " exterminatus to trailing whitespaces
