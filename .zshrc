@@ -65,6 +65,12 @@ alias j11='export JAVA_HOME=$JAVA_11_HOME'
 #use java8 by default
 j8
 
+###################### kubernetes aliases ########################################
+alias kga='kubectl get all'
+alias kgaa='kubectl get all --all-namespaces'
+alias kget='kubectl get'
+alias kdsc='kubectl describe'
+
 ######################  git aliases and utilities ################################
 alias s='git show --format=fuller'
 alias ch='git checkout '
