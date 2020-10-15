@@ -9,6 +9,7 @@ set showmatch           " jump to matches when entering regexp
 set ignorecase          " ignore case when searching
 set smartcase           " no ignorecase if Uppercase char present
 set foldmethod=syntax   " enable folding e.g a json array or a python method
+set display+=lastline   " display lines partially that are too long to fit the screen
 
 set autoread            " reload filesystem changes
 
