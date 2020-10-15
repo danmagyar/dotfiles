@@ -109,12 +109,15 @@ Plug 'easymotion/vim-easymotion'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'plasticboy/vim-markdown'
 Plug 'google/vim-searchindex'
+Plug 'JamshedVesuna/vim-markdown-preview'
 call plug#end()
 
 let g:github_enterprise_urls = ['https://github.infra.cloudera.com']
 let g:notes_directories = ['~/notes']
 
 let g:ale_set_highlights = 0
+
+let vim_markdown_preview_github=1
 
 colorscheme onedark
 
