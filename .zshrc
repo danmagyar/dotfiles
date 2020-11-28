@@ -2,7 +2,6 @@
 export LC_ALL=en_US.UTF-8
 export ZSH='/Users/danielmagyar/.oh-my-zsh'
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
-#ZSH_THEME="agnoster"
 
 POWERLEVEL9K_MODE='nerdfont-complete'
 POWERLEVEL9K_VIRTUALENV_BACKGROUND='purple'
@@ -16,7 +15,7 @@ POWERLEVEL9K_AWS_FOREGROUND='black'
 POWERLEVEL9K_KUBECONTEXT_BACKGROUND='steelblue'
 POWERLEVEL9K_KUBECONTEXT_FOREGROUND='black'
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(date time newline custom_shell_level aws kubecontext newline docker_machine virtualenv dir vcs status)
-POWERLEVEL9K_CUSTOM_SHELL_LEVEL="if (( SHLVL > 1 )); then echo $SHLVL; fi" #print how level deep the current shell is if its a subshell
+POWERLEVEL9K_CUSTOM_SHELL_LEVEL="if (( SHLVL > 1 )); then echo $SHLVL; fi" #print how many levels deep the current shell is if its a subshell
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 
@@ -56,6 +55,7 @@ dotcmd(){
 	(cd ~/gitrepos/dotfiles && command $@)
 }
 
+################################### Java #########################################
 # switch to java version
 export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
 export JAVA_11_HOME=$(/usr/libexec/java_home -v11)
