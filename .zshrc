@@ -65,7 +65,15 @@ alias j11='export JAVA_HOME=$JAVA_11_HOME'
 #use java8 by default
 j8
 
-###################### kubernetes aliases ########################################
+function findClassRecursively(){
+    local CLASSNAME=$1
+    find . -name '*.jar' -exec grep -rHls "$CLASSNAME" {} \;
+}
+
+function listClassesRecursively(){
+    find . -name '*.jar' -exec jar -tvf {} \;
+}
+
 alias kga='kubectl get all'
 alias kgaa='kubectl get all --all-namespaces'
 alias kget='kubectl get'
