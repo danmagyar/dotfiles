@@ -94,6 +94,15 @@ function getDockerfileFromImage(){
         {{with .Config.OnBuild}}ONBUILD {{json .}}{{end}}' "$1"
 }
 
+alias dockviz='docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock nate/dockviz'
+
+function printDockerImageMap(){
+        TMP_FILE=$(mktemp --suffix ".png")
+        dockviz images -d | dot -Tpng -o $TMP_FILE
+        imgcat $TMP_FILE
+#        rm $TMP_FILE #imgcat breaks on big pictures if the file gets deleted
+}
+
 alias kga='kubectl get all'
 alias kgaa='kubectl get all --all-namespaces'
 alias kget='kubectl get'
