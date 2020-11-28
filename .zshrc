@@ -103,6 +103,9 @@ function printDockerImageMap(){
 #        rm $TMP_FILE #imgcat breaks on big pictures if the file gets deleted
 }
 
+###################### kubernetes (k8s) aliases ########################################
+export EDITOR=vim
+export K9S_EDITOR=vim
 alias kga='kubectl get all'
 alias kgaa='kubectl get all --all-namespaces'
 alias kget='kubectl get'
