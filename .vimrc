@@ -116,6 +116,8 @@ Plug 'plasticboy/vim-markdown'
 Plug 'google/vim-searchindex'
 Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'mbbill/undotree'
+Plug 'jesseleite/vim-agriculture'
+
 call plug#end()
 
 let g:github_enterprise_urls = ['https://github.infra.cloudera.com']
