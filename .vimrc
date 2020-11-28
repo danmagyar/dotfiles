@@ -11,6 +11,11 @@ set smartcase           " no ignorecase if Uppercase char present
 set foldmethod=syntax   " enable folding e.g a json array or a python method
 set display+=lastline   " display lines partially that are too long to fit the screen
 
+" show whitespaces by default, toggle with F4
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<,space:· "whitespaces to show
+set list
+noremap <F4> :set list!<CR>
+
 set autoread            " reload filesystem changes
 
 set clipboard=unnamed " yank into clipboard by default
