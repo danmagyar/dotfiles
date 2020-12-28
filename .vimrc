@@ -61,6 +61,7 @@ set t_RV=               " http://bugs.debian.org/608242, http://groups.google.co
 
 let g:netrw_liststyle = 3 " netrw: use tree style directory listing (e.g. :40vs +Ex)
 let g:netrw_browse_split = 4 " netrw: open file in previous window beside netrw split
+let g:netrw_winsize = 20 " width of netrw split is 20% of the entire vim window
 
 " google the selected text by pressing F1
 xnoremap <f1> "zy:!open "http://www.google.com/search?q=<c-r>=substitute(@z,' ','%20','g')<cr>"<return>gv
