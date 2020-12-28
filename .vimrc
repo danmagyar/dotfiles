@@ -59,6 +59,8 @@ filetype indent on      " load indent file for specific file type
 set nocompatible        " use vim defaults
 set t_RV=               " http://bugs.debian.org/608242, http://groups.google.com/group/vim_dev/browse_thread/thread/9770ea844cec3282
 
+let g:netrw_liststyle = 3 " use tree style directory listing when using netrw (e.g. :40vs +Ex)
+
 " google the selected text by pressing F1
 xnoremap <f1> "zy:!open "http://www.google.com/search?q=<c-r>=substitute(@z,' ','%20','g')<cr>"<return>gv
 
