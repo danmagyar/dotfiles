@@ -182,3 +182,5 @@ let NERDTreeQuitOnOpen = 1
 
 "" open nerdtree and select currently edited file by pressing `\v`
 nnoremap <silent> <Leader>v :NERDTreeFind<CR>
+
+au BufRead,BufNewFile *.conf set filetype=dosini  " turn on syntax for .conf files
