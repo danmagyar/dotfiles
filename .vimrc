@@ -39,10 +39,6 @@ set clipboard=unnamed " yank into clipboard by default
 " prettyfy json with Control+Shift+P
 :nnoremap <silent> <C-S-P> : %!python -m json.tool<CR>
 
-" turn on actual highlight on highlightsearch
-set cursorline
-hi CursorLine term=bold cterm=bold guibg=white
-
 
 set visualbell t_vb=    " turn off error beep/flash
 set novisualbell        " turn off visual bell
@@ -186,3 +182,10 @@ let NERDTreeQuitOnOpen = 1
 nnoremap <silent> <Leader>v :NERDTreeFind<CR>
 
 au BufRead,BufNewFile *.conf set filetype=dosini  " turn on syntax for .conf files
+
+" mark the entrire line the cursor is currently in
+set cursorline
+
+" use bold characters on the entire line the cursor is currently in
+highlight CursorLine term=bold cterm=bold
+
