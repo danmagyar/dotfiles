@@ -1,25 +1,3 @@
-set relativenumber	" make linenumbers relative
-
-autocmd BufWritePre * :%s/\s\+$//e 	 " exterminatus to trailing whitespaces
-
-
-set hlsearch		" highlight search
-set incsearch		" incremental search
-set showmatch           " jump to matches when entering regexp
-set ignorecase          " ignore case when searching
-set smartcase           " no ignorecase if Uppercase char present
-set foldmethod=syntax   " enable folding e.g a json array or a python method
-set display+=lastline   " display lines partially that are too long to fit the screen
-
-" show whitespaces by default, toggle with F4
-set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<,space:· "whitespaces to show
-set list
-noremap <F4> :set list!<CR>
-
-set autoread            " reload filesystem changes
-
-set clipboard=unnamed " yank into clipboard by default
-
 " surround with ", ' or delete the quatation
 :nnoremap <Leader>q" ciw""<Esc>P
 :nnoremap <Leader>q' ciw''<Esc>P
@@ -40,26 +18,6 @@ set clipboard=unnamed " yank into clipboard by default
 :nnoremap <silent> <C-S-P> : %!python -m json.tool<CR>
 
 
-set visualbell t_vb=    " turn off error beep/flash
-set novisualbell        " turn off visual bell
-
-
-set backspace=indent,eol,start  " make that backspace key work the way it should
-set expandtab
-
-syntax on               " turn syntax highlighting on by default
-filetype on             " detect type of file
-filetype indent on      " load indent file for specific file type
-
-
-set nocompatible        " use vim defaults
-set t_RV=               " http://bugs.debian.org/608242, http://groups.google.com/group/vim_dev/browse_thread/thread/9770ea844cec3282
-
-let g:netrw_liststyle = 3 " netrw: use tree style directory listing (e.g. :40vs +Ex)
-let g:netrw_browse_split = 4 " netrw: open file in previous window beside netrw split
-let g:netrw_winsize = 20 " width of netrw split is 20% of the entire vim window
-
-" google the selected text by pressing F1
 xnoremap <f1> "zy:!open "http://www.google.com/search?q=<c-r>=substitute(@z,' ','%20','g')<cr>"<return>gv
 
 " insert current timestamp in normal mode by pressing F5
@@ -127,8 +85,6 @@ let g:ale_set_highlights = 0
 
 let vim_markdown_preview_github=1
 
-colorscheme onedark
-
 " unblevable/quick-scope: Trigger a highlight in the appropriate direction when pressing these keys:
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
@@ -150,12 +106,6 @@ if (empty($TMUX))
     set termguicolors
   endif
 endif
-
-" fix lightline plugin
-set laststatus=2
-
-set encoding=utf-8
-set fileencoding=utf-8
 
 "" NERDTree configuration
 let g:NERDTreeChDirMode=2
@@ -183,9 +133,86 @@ nnoremap <silent> <Leader>v :NERDTreeFind<CR>
 
 au BufRead,BufNewFile *.conf set filetype=dosini  " turn on syntax for .conf files
 
-" mark the entrire line the cursor is currently in
-set cursorline
 
+"################ General config ################
+set nocompatible                " use Vim default settings instead of Vi
+set backspace=indent,eol,start  " allow backspacing over indention, line breaks and insertion start
+set history=1000                " bigger history of executed commands
+set showcmd                     " at the bottom show partial commands being typed (e.g. ya...) in normal mode / selected area in visual mode
+set showmode                    " at the bottom show current mode
+set autoread                    " automatically reload filesystem changes
+set hidden                      " let current buffer being sent to the background without writing to disk
+set confirm                     " show confirmation dialog when closing an unsaved file
+
+"################ User interface ################
+set laststatus=2                " always show status bar
+set wildmenu                    " display command line's tab complete option as a menu
+set tabpagemax=40               " enable more tabs to be opened
+set number                      " show current line number
+set relativenumber	            " make other linenumbers relative
+"set visualbell t_vb=           " turn off error beep/flash
+"set novisualbell               " turn off visual bell
+"set noerrorbells                " don't beep on errors
+set visualbell                  " flash screen on error
+set mouse=a                     " enable using the mouse for scrolling, selecting
+set title                       " Set the window's title, reflecting the file currently being edited
+set background=dark
+colorscheme onedark             " set color scheme to the one used by atom
+set cursorline                  " mark the entire line the cursor is currently in
 " use bold characters on the entire line the cursor is currently in
 highlight CursorLine term=bold cterm=bold
+"
+"
+"################ Swap and backup files ################
+set noswapfile
+set nobackup
+set nowb
+
+
+"################ Indentations ################
+set autoindent                  " new lines inherit the indentation of previous lines
+filetype plugin indent on       " load indent file for specific file type indentation instead of old smartindent
+set tabstop=4                   " show existing tabs with 4 spaces width
+set shiftwidth=2                " when indenting with >, use 2 spaces
+set expandtab                   " when pressing tab, insert 4 spaces
+set wrap                        " wrap lines
+
+
+"################ Search options ################
+set hlsearch		            " highlight search
+set incsearch		            " incremental search
+set showmatch                   " jump to matches when entering regexp
+set ignorecase                  " ignore case when searching
+set smartcase                   " no ignorecase if Uppercase char present
+
+
+"################ Text rendering ################
+set encoding=utf-8              " use unicode supporting encoding
+set fileencoding=utf-8
+set linebreak                   " wrap lines at convenient points not in the middle of a word
+set scrolloff=3                 " number of lines to keep above/below the cursor
+set sidescrolloff=5             " number of columns to keep left/right from the cursor
+syntax on                       " turn syntax highlighting on by default
+filetype on                     " detect type of file
+
+"
+"################ Misc ################
+" show whitespaces by default, toggle with F4
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<,space:· "whitespaces to show
+set list
+noremap <F4> :set list!<CR>
+
+
+autocmd BufWritePre * :%s/\s\+$//e 	 " exterminatus to trailing whitespaces
+
+set foldmethod=syntax   " enable folding e.g a json array or a python method
+set display+=lastline   " display lines partially that are too long to fit the screen
+
+set clipboard=unnamed " yank into clipboard by default
+set t_RV=               " http://bugs.debian.org/608242, http://groups.google.com/group/vim_dev/browse_thread/thread/9770ea844cec3282
+
+
+let g:netrw_liststyle = 3 " netrw: use tree style directory listing (e.g. :40vs +Ex)
+let g:netrw_browse_split = 4 " netrw: open file in previous window beside netrw split
+let g:netrw_winsize = 20 " width of netrw split is 20% of the entire vim window
 
