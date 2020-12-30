@@ -144,6 +144,7 @@ set autoread                    " automatically reload filesystem changes
 set hidden                      " let current buffer being sent to the background without writing to disk
 set confirm                     " show confirmation dialog when closing an unsaved file
 
+
 "################ User interface ################
 set laststatus=2                " always show status bar
 set wildmenu                    " display command line's tab complete option as a menu
@@ -161,8 +162,8 @@ colorscheme onedark             " set color scheme to the one used by atom
 set cursorline                  " mark the entire line the cursor is currently in
 " use bold characters on the entire line the cursor is currently in
 highlight CursorLine term=bold cterm=bold
-"
-"
+
+
 "################ Swap and backup files ################
 set directory=$HOME/.vim/swp//  " Put swap files into ~/.vim/swp. `//` tells vim to use the absolute path of the opened file to name the swap file
 set nobackup                    " I don't use backup files
@@ -195,24 +196,24 @@ set sidescrolloff=5             " number of columns to keep left/right from the 
 syntax on                       " turn syntax highlighting on by default
 filetype on                     " detect type of file
 
-"
+
 "################ Misc ################
 " show whitespaces by default, toggle with F4
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<,space:· "whitespaces to show
 set list
 noremap <F4> :set list!<CR>
 
-
+set exrc                        " use project specific vimrc files
 autocmd BufWritePre * :%s/\s\+$//e 	 " exterminatus to trailing whitespaces
 
-set foldmethod=syntax   " enable folding e.g a json array or a python method
-set display+=lastline   " display lines partially that are too long to fit the screen
+set foldmethod=syntax           " enable folding e.g a json array or a python method
+set display+=lastline           " display lines partially that are too long to fit the screen
 
-set clipboard=unnamed " yank into clipboard by default
-set t_RV=               " http://bugs.debian.org/608242, http://groups.google.com/group/vim_dev/browse_thread/thread/9770ea844cec3282
+set clipboard=unnamed           " yank into clipboard by default
+set t_RV=                       " http://bugs.debian.org/608242, http://groups.google.com/group/vim_dev/browse_thread/thread/9770ea844cec3282
 
 
-let g:netrw_liststyle = 3 " netrw: use tree style directory listing (e.g. :40vs +Ex)
-let g:netrw_browse_split = 4 " netrw: open file in previous window beside netrw split
-let g:netrw_winsize = 20 " width of netrw split is 20% of the entire vim window
+let g:netrw_liststyle = 3       " netrw: use tree style directory listing (e.g. :40vs +Ex)
+let g:netrw_browse_split = 4    " netrw: open file in previous window beside netrw split
+let g:netrw_winsize = 20        " width of netrw split is 20% of the entire vim window
 
