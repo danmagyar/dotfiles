@@ -153,10 +153,10 @@ set number                      " show current line number
 set relativenumber	            " make other linenumbers relative
 "set visualbell t_vb=           " turn off error beep/flash
 "set novisualbell               " turn off visual bell
-"set noerrorbells                " don't beep on errors
+"set noerrorbells               " don't beep on errors
 set visualbell                  " flash screen on error
 set mouse=a                     " enable using the mouse for scrolling, selecting
-set title                       " Set the window's title, reflecting the file currently being edited
+set title                       " set the window's title, reflecting the file currently being edited
 set background=dark
 colorscheme onedark             " set color scheme to the one used by atom
 set cursorline                  " mark the entire line the cursor is currently in
@@ -164,10 +164,12 @@ set cursorline                  " mark the entire line the cursor is currently i
 highlight CursorLine term=bold cterm=bold
 
 
-"################ Swap and backup files ################
+"################ Auxiliary vim files ################
 set directory=$HOME/.vim/swp//  " Put swap files into ~/.vim/swp. `//` tells vim to use the absolute path of the opened file to name the swap file
-set nobackup                    " I don't use backup files
-set nowritebackup
+set nobackup                    " Don't use backup files, use git instead
+set nowritebackup               " Don't use backup files, use git instead
+set undofile                    " Maintain undo history between sessions
+set undodir=$HOME/.vim/undodir  " Put undo history files to ~/.vim/undodir, not locally next to the file
 
 
 "################ Indentations ################
