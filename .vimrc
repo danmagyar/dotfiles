@@ -164,9 +164,9 @@ highlight CursorLine term=bold cterm=bold
 "
 "
 "################ Swap and backup files ################
-set noswapfile
-set nobackup
-set nowb
+set directory=$HOME/.vim/swp//  " Put swap files into ~/.vim/swp. `//` tells vim to use the absolute path of the opened file to name the swap file
+set nobackup                    " I don't use backup files
+set nowritebackup
 
 
 "################ Indentations ################
