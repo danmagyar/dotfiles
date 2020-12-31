@@ -28,14 +28,18 @@ nnoremap <F5> "=strftime("%A, %Y %B %d")<CR>P
 autocmd FileType gitcommit exec 'au VimEnter * startinsert'
 
 
-" lightline plugin
 let g:lightline = {
-  \     'active': {
-  \         'left': [['mode', 'paste' ], ['readonly', 'filename', 'modified']],
-  \         'right': [['lineinfo'], ['percent'], ['fileformat', 'fileencoding']]
-  \     }
-  \ }
-
+        \ 'colorscheme': 'onedark',
+        \ 'active': {
+        \   'left': [  [ 'mode', 'paste' ],
+        \              [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
+        \   'right': [ [ 'lineinfo' ], [ 'percent' ],
+        \              [ 'fileformat' , 'fileencoding' ] ]
+        \ },
+        \ 'component_function': {
+        \   'gitbranch': 'FugitiveHead'
+        \ },
+      \ }
 
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -139,7 +143,7 @@ set nocompatible                " use Vim default settings instead of Vi
 set backspace=indent,eol,start  " allow backspacing over indention, line breaks and insertion start
 set history=1000                " bigger history of executed commands
 set showcmd                     " at the bottom show partial commands being typed (e.g. ya...) in normal mode / selected area in visual mode
-set showmode                    " at the bottom show current mode
+set noshowmode                  " dont show current mode in the statusline, lightline plugin takes care of it
 set autoread                    " automatically reload filesystem changes
 set hidden                      " let current buffer being sent to the background without writing to disk
 set confirm                     " show confirmation dialog when closing an unsaved file
