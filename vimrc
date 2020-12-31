@@ -219,7 +219,11 @@ let g:netrw_liststyle = 3       " netrw: use tree style directory listing (e.g. 
 let g:netrw_browse_split = 4    " netrw: open file in previous window beside netrw split
 let g:netrw_winsize = 20        " width of netrw split is 20% of the entire vim window
 
-"################ Remaps ################
-" show previous/next match in the middle of the screen
+"################ Maps (shortcuts) ################
+" when pressing n/N show previous/next match in the middle of the screen
 nnoremap n nzz
 nnoremap N Nzz
+
+" press `,/` to turn off search highlighting
+nmap <silent> ,/ :nohlsearch<CR>
+
