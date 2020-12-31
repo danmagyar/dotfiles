@@ -27,26 +27,7 @@ nnoremap <F5> "=strftime("%A, %Y %B %d")<CR>P
 " git commit opens vim in insert mode
 autocmd FileType gitcommit exec 'au VimEnter * startinsert'
 
-
-let g:lightline = {
-        \ 'colorscheme': 'onedark',
-        \ 'active': {
-        \   'left': [  [ 'mode', 'paste' ],
-        \              [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
-        \   'right': [ [ 'lineinfo' ], [ 'percent' ],
-        \              [ 'fileformat' , 'fileencoding' ] ]
-        \ },
-        \ 'component_function': {
-        \   'gitbranch': 'FugitiveHead'
-        \ },
-      \ }
-
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
+"################ Plugins ################
 " so ~/.vim/plugins.vim
 call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'
@@ -81,6 +62,28 @@ Plug 'mbbill/undotree'
 Plug 'jesseleite/vim-agriculture'
 
 call plug#end()
+
+"################ Plugin confiig ################
+
+" use lightline plugin to display fancy onedark statusline with git branch
+let g:lightline = {
+        \ 'colorscheme': 'onedark',
+        \ 'active': {
+        \   'left': [  [ 'mode', 'paste' ],
+        \              [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
+        \   'right': [ [ 'lineinfo' ], [ 'percent' ],
+        \              [ 'fileformat' , 'fileencoding' ] ]
+        \ },
+        \ 'component_function': {
+        \   'gitbranch': 'FugitiveHead'
+        \ },
+        \ }
+
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
 let g:github_enterprise_urls = ['https://github.infra.cloudera.com']
 let g:notes_directories = ['~/notes']
