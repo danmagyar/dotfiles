@@ -219,6 +219,21 @@ let g:netrw_liststyle = 3       " netrw: use tree style directory listing (e.g. 
 let g:netrw_browse_split = 4    " netrw: open file in previous window beside netrw split
 let g:netrw_winsize = 20        " width of netrw split is 20% of the entire vim window
 
+
+" Set the title of the Terminal to the currently open file, credits: https://gist.github.com/bignimbus/1da46a18416da4119778
+function! SetTerminalTitle()
+    let titleString = expand('%:t')
+    if len(titleString) > 0
+        let &titlestring = expand('%:t')
+        " this is the format iTerm2 expects when setting the window title
+        let args = "\033];".&titlestring."\007"
+        let cmd = 'silent !echo -e "'.args.'"'
+        execute cmd
+        redraw!
+    endif
+endfunction
+autocmd BufEnter * call SetTerminalTitle()
+"
 "################ Maps (shortcuts) ################
 " when pressing n/N show previous/next match in the middle of the screen
 nnoremap n nzz
@@ -230,4 +245,3 @@ nmap <silent> ,/ :nohlsearch<CR>
 " press Ctrl-K/Ctrl-J to get to previous/next buffer
 map <C-K> :bprev<CR>
 map <C-J> :bnext<CR>
-
