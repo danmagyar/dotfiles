@@ -227,3 +227,7 @@ nnoremap N Nzz
 " press `,/` to turn off search highlighting
 nmap <silent> ,/ :nohlsearch<CR>
 
+" press Ctrl-K/Ctrl-J to get to previous/next buffer
+map <C-K> :bprev<CR>
+map <C-J> :bnext<CR>
+
