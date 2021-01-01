@@ -277,4 +277,4 @@ vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
 " \gc to write buffer to file, git add, commit in verbose mode and reload so GitGutter shows the updated buffer state
-nnoremap <Leader>gc :w<CR> :Git commit -av<CR> :e<CR>
+nnoremap <Leader>gc :w<CR> :Git commit -av<CR>k :e<CR>
