@@ -253,5 +253,11 @@ nnoremap N Nzz
 nmap <silent> ,/ :nohlsearch<CR>
 
 " press Ctrl-K/Ctrl-J to get to previous/next buffer
-map <C-K> :bprev<CR>
-map <C-J> :bnext<CR>
+map <C-S-K> :bprev<CR>
+map <C-S-J> :bnext<CR>
+
+" jump between opened windows with Ctrl-H/J/K/L
+nnoremap <C-H> <C-W><C-H>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
