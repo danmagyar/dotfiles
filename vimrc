@@ -47,6 +47,7 @@ Plug 'zivyangll/git-blame.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 Plug 'k0kubun/vim-open-github'
 Plug 'AndrewRadev/linediff.vim'
 Plug 'kshenoy/vim-signature'
@@ -79,13 +80,15 @@ let g:lightline = {
         \ },
         \ }
 
+" tpope/rhubarb config:
+let g:github_enterprise_urls = ['https://github.infra.cloudera.com']
+
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-let g:github_enterprise_urls = ['https://github.infra.cloudera.com']
 let g:notes_directories = ['~/notes']
 
 let g:ale_set_highlights = 0
