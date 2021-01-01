@@ -1,21 +1,21 @@
 " surround with ", ' or delete the quatation
-:nnoremap <Leader>q" ciw""<Esc>P
-:nnoremap <Leader>q' ciw''<Esc>P
-:nnoremap <Leader>q{ ciw{}<Esc>P
-:nnoremap <Leader>q} ciw{}<Esc>P
-:nnoremap <Leader>q[ ciw[]<Esc>P
-:nnoremap <Leader>q] ciw[]<Esc>P
-:nnoremap <Leader>qd daW"=substitute(@@,"'\\\|\"","","g")<CR>P
+nnoremap <Leader>q" ciw""<Esc>P
+nnoremap <Leader>q' ciw''<Esc>P
+nnoremap <Leader>q{ ciw{}<Esc>P
+nnoremap <Leader>q} ciw{}<Esc>P
+nnoremap <Leader>q[ ciw[]<Esc>P
+nnoremap <Leader>q] ciw[]<Esc>P
+nnoremap <Leader>qd daW"=substitute(@@,"'\\\|\"","","g")<CR>P
 
 " quote shell variable properly,
 " e.g. $VAR --> \qv --> <doublequote>$VAR<doublequote>
-:nnoremap <Leader>qv F$xciw""<Esc>Pbi$<Esc>
+nnoremap <Leader>qv F$xciw""<Esc>Pbi$<Esc>
 
 " fuzzy find and open file with Control+Shift+O
 " :nnoremap <silent> <C-S-O> : Files<CR>
 
 " prettyfy json with Control+Shift+P
-:nnoremap <silent> <C-S-P> : %!python -m json.tool<CR>
+nnoremap <silent> <C-S-P> : %!python -m json.tool<CR>
 
 
 xnoremap <f1> "zy:!open "http://www.google.com/search?q=<c-r>=substitute(@z,' ','%20','g')<cr>"<return>gv
@@ -243,7 +243,7 @@ function! SetTerminalTitle()
     endif
 endfunction
 autocmd BufEnter * call SetTerminalTitle()
-"
+
 "################ Maps (shortcuts) ################
 " when pressing n/N show previous/next match in the middle of the screen
 nnoremap n nzz
