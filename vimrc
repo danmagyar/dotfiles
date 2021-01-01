@@ -209,6 +209,14 @@ syntax on                       " turn syntax highlighting on by default
 filetype on                     " detect type of file
 
 
+"################ Folding ################
+set foldenable                  " enable folding
+set foldlevelstart=10           " open most of the folds by default. If set to 0, all folds will be closed.
+set foldnestmax=10              " folds can be nested. Setting a max value protects you from too many folds.
+set foldmethod=syntax           " enable folding e.g a json array or a python method
+set foldcolumn=4                " indicate folds on the left column 4 levels deep.
+
+
 "################ Misc ################
 " show whitespaces by default, toggle with F4
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<,space:· "whitespaces to show
@@ -218,7 +226,6 @@ noremap <F4> :set list!<CR>
 set exrc                        " use project specific vimrc files
 autocmd BufWritePre * :%s/\s\+$//e 	 " exterminatus to trailing whitespaces
 
-set foldmethod=syntax           " enable folding e.g a json array or a python method
 set display+=lastline           " display lines partially that are too long to fit the screen
 
 set clipboard=unnamed           " yank into clipboard by default
