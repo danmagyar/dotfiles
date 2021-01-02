@@ -255,6 +255,9 @@ endfunction
 autocmd BufEnter * call SetTerminalTitle()
 
 "################ Maps (shortcuts) ################
+" Use space as leader key
+let mapleader = "\<Space>"
+
 " when pressing n/N show previous/next match in the middle of the screen
 nnoremap n nzz
 nnoremap N Nzz
@@ -279,5 +282,5 @@ vnoremap . :normal.<CR>
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
-" \gc to write buffer to file, git add, commit in verbose mode and reload so GitGutter shows the updated buffer state
+" <LEADER>gc to write buffer to file, git add, commit in verbose mode and reload so GitGutter shows the updated buffer state
 nnoremap <Leader>gc :w<CR> :Git commit -av<CR>k :e<CR>
