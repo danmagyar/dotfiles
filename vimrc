@@ -278,6 +278,9 @@ nnoremap <C-L> <C-W><C-L>
 " make . to work with visually selected lines
 vnoremap . :normal.<CR>
 
+" use Ctrl-n to autocomplete words in insert mode
+inoremap <Nul> <C-n>
+
 " Move visually selected lines up/down by pressing J/K
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
