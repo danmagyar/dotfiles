@@ -1,16 +1,3 @@
-" surround with ", ' or delete the quatation
-nnoremap <Leader>q" ciw""<Esc>P
-nnoremap <Leader>q' ciw''<Esc>P
-nnoremap <Leader>q{ ciw{}<Esc>P
-nnoremap <Leader>q} ciw{}<Esc>P
-nnoremap <Leader>q[ ciw[]<Esc>P
-nnoremap <Leader>q] ciw[]<Esc>P
-nnoremap <Leader>qd daW"=substitute(@@,"'\\\|\"","","g")<CR>P
-
-" quote shell variable properly,
-" e.g. $VAR --> \qv --> <doublequote>$VAR<doublequote>
-nnoremap <Leader>qv F$xciw""<Esc>Pbi$<Esc>
-
 " fuzzy find and open file with Control+Shift+O
 " :nnoremap <silent> <C-S-O> : Files<CR>
 
@@ -278,12 +265,26 @@ nnoremap <C-L> <C-W><C-L>
 " make . to work with visually selected lines
 vnoremap . :normal.<CR>
 
-" use Ctrl-n to autocomplete words in insert mode
+" use Ctrl-space to autocomplete words in insert mode
 inoremap <Nul> <C-n>
 
 " Move visually selected lines up/down by pressing J/K
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
-" <LEADER>gc to write buffer to file, git add, commit in verbose mode and reload so GitGutter shows the updated buffer state
-nnoremap <Leader>gc :w<CR> :Git commit -av<CR>k :e<CR>
+" <LEADER>c to write buffer to file, git add, commit in verbose mode and reload so GitGutter shows the updated buffer state
+nnoremap <Leader>c :w<CR> :Git commit -av<CR>k :e<CR>
+
+" surround with ", ' or delete the quatation
+nnoremap <Leader>q" ciw""<Esc>P
+nnoremap <Leader>q' ciw''<Esc>P
+nnoremap <Leader>q{ ciw{}<Esc>P
+nnoremap <Leader>q} ciw{}<Esc>P
+nnoremap <Leader>q[ ciw[]<Esc>P
+nnoremap <Leader>q] ciw[]<Esc>P
+nnoremap <Leader>qd daW"=substitute(@@,"'\\\|\"","","g")<CR>P
+
+" quote shell variable properly,
+" e.g. $VAR --> \qv --> <doublequote>$VAR<doublequote>
+nnoremap <Leader>qv F$xciw""<Esc>Pbi$<Esc>
+
