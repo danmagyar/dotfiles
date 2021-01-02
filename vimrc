@@ -256,6 +256,10 @@ nmap <silent> ,/ :nohlsearch<CR>
 map <C-S-K> :bprev<CR>
 map <C-S-J> :bnext<CR>
 
+"Jump back to last edited buffer
+nnoremap <C-b> <C-^>
+inoremap <C-b> <esc><C-^>
+
 " jump between opened windows with Ctrl-H/J/K/L
 nnoremap <C-H> <C-W><C-H>
 nnoremap <C-J> <C-W><C-J>
@@ -287,4 +291,3 @@ nnoremap <Leader>qd daW"=substitute(@@,"'\\\|\"","","g")<CR>P
 " quote shell variable properly,
 " e.g. $VAR --> \qv --> <doublequote>$VAR<doublequote>
 nnoremap <Leader>qv F$xciw""<Esc>Pbi$<Esc>
-
