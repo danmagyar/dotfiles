@@ -159,8 +159,11 @@ set confirm                     " show confirmation dialog when closing an unsav
 set laststatus=2                " always show status bar
 set wildmenu                    " display command line's tab complete option as a menu
 set tabpagemax=40               " enable more tabs to be opened
-set number                      " show current line number
-set relativenumber	            " make other linenumbers relative
+set number                      " show cursorline's absolute line number
+" for other lines use absolute line numbers in insert mode, relative in other modes
+augroup toggle_relative_number
+autocmd InsertEnter * :setlocal norelativenumber
+autocmd InsertLeave * :setlocal relativenumber
 "set visualbell t_vb=           " turn off error beep/flash
 "set novisualbell               " turn off visual bell
 "set noerrorbells               " don't beep on errors
