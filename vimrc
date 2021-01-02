@@ -1,5 +1,3 @@
-" fuzzy find and open file with Control+Shift+O
-" :nnoremap <silent> <C-S-O> : Files<CR>
 
 " prettyfy json with Control+Shift+P
 nnoremap <silent> <C-S-P> : %!python -m json.tool<CR>
@@ -266,6 +264,9 @@ vnoremap . :normal.<CR>
 
 " use Ctrl-space to autocomplete words in insert mode
 inoremap <Nul> <C-n>
+
+" fuzzy find and open file with <LEADER>+Shift+O
+nnoremap <Leader>O :Files<CR>
 
 " Move visually selected lines up/down by pressing J/K
 vnoremap J :m '>+1<CR>gv=gv
