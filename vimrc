@@ -48,6 +48,7 @@ Plug 'google/vim-searchindex'
 Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'mbbill/undotree'
 Plug 'jesseleite/vim-agriculture'
+Plug 'wellle/targets.vim'
 
 call plug#end()
 
