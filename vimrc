@@ -1,17 +1,3 @@
-
-" prettyfy json with Control+Shift+P
-nnoremap <silent> <C-S-P> : %!python -m json.tool<CR>
-
-
-xnoremap <f1> "zy:!open "http://www.google.com/search?q=<c-r>=substitute(@z,' ','%20','g')<cr>"<return>gv
-
-" insert current timestamp in normal mode by pressing F5
-nnoremap <F5> "=strftime("%A, %Y %B %d")<CR>P
-
-
-" git commit opens vim in insert mode
-autocmd FileType gitcommit exec 'au VimEnter * startinsert'
-
 "################ Plugins ################
 " so ~/.vim/plugins.vim
 call plug#begin('~/.vim/plugged')
@@ -44,7 +30,8 @@ Plug 'wellle/targets.vim'
 
 call plug#end()
 
-"################ Plugin confiig ################
+
+"################ Plugin confiigs and maps ################
 
 " use lightline plugin to display fancy onedark statusline with git branch
 let g:lightline = {
@@ -60,17 +47,17 @@ let g:lightline = {
         \ },
         \ }
 
-" tpope/rhubarb config:
+" tpope/rhubarb config to use Cloudera internal github
 let g:github_enterprise_urls = ['https://github.infra.cloudera.com']
 
+" vim-plug plugin manager config
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-let g:notes_directories = ['~/notes']
-
+" ale plugin: disable highlights
 let g:ale_set_highlights = 0
 
 let vim_markdown_preview_github=1
@@ -234,6 +221,10 @@ function! SetTerminalTitle()
 endfunction
 autocmd BufEnter * call SetTerminalTitle()
 
+" git commit opens vim in insert mode when run from terminal
+autocmd FileType gitcommit exec 'au VimEnter * startinsert'
+
+
 "################ Maps (shortcuts) ################
 " Use space as leader key
 let mapleader = "\<Space>"
@@ -287,3 +278,9 @@ nnoremap <Leader>qd daW"=substitute(@@,"'\\\|\"","","g")<CR>P
 " quote shell variable properly,
 " e.g. $VAR --> \qv --> <doublequote>$VAR<doublequote>
 nnoremap <Leader>qv F$xciw""<Esc>Pbi$<Esc>
+
+" prettyfy json with Control+Shift+P
+nnoremap <silent> <C-S-P> : %!python -m json.tool<CR>
+xnoremap <f1> "zy:!open "http://www.google.com/search?q=<c-r>=substitute(@z,' ','%20','g')<cr>"<return>gv
+" insert current timestamp in normal mode by pressing F5
+nnoremap <F5> "=strftime("%A, %Y %B %d")<CR>P
