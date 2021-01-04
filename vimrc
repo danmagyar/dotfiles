@@ -188,6 +188,18 @@ set foldcolumn=4                " indicate folds on the left column 4 levels dee
 
 
 "################ Misc ################
+
+" fix gx bug on vim8, source: https://github.com/vim/vim/issues/4738#issuecomment-714609892
+function! OpenURLUnderCursor()
+  let s:uri = matchstr(getline('.'), '[a-z]*:\/\/[^ >,;()]*')
+  let s:uri = shellescape(s:uri, 1)
+  if s:uri != ''
+    silent exec "!open '".s:uri."'"
+    :redraw!
+  endif
+endfunction
+nnoremap gx :call OpenURLUnderCursor()<CR>
+
 " show whitespaces by default, toggle with F4
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<,space:· "whitespaces to show
 set list
