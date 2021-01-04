@@ -4,6 +4,8 @@ set clipboard+=ideaput
 set ideajoin
 set ideamarks
 
+" required acejump plugin colors in order:
+" E3C181 282C34 DC7076 3AFF52 000000
 set easymotion
 set surround
 let mapleader="\<Space>"
