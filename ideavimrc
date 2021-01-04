@@ -8,5 +8,4 @@ set ideamarks
 " E3C181 282C34 DC7076 3AFF52 000000
 set easymotion
 set surround
-let mapleader="\<Space>"
 nmap <leader>c :action CheckinProject<cr>
