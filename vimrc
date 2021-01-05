@@ -32,7 +32,6 @@ call plug#end()
 
 
 "################ Plugin confiigs and maps ################
-
 " use lightline plugin to display fancy onedark statusline with git branch
 let g:lightline = {
         \ 'colorscheme': 'onedark',
@@ -46,6 +45,11 @@ let g:lightline = {
         \   'gitbranch': 'FugitiveHead'
         \ },
         \ }
+
+" git gutter character customization to be consistent with idea
+let g:gitgutter_sign_added = '▓'
+let g:gitgutter_sign_modified = '▓'
+let g:gitgutter_sign_removed = '▶'
 
 " tpope/rhubarb config to use Cloudera internal github
 let g:github_enterprise_urls = ['https://github.infra.cloudera.com']
