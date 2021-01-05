@@ -9,3 +9,5 @@ set ideamarks
 set easymotion
 set surround
 nmap <leader>c :action CheckinProject<cr>
+nmap [c :action VcsShowPrevChangeMarker<cr>
+nmap ]c :action VcsShowNextChangeMarker<cr>
