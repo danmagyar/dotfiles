@@ -55,6 +55,20 @@ dotcmd(){
 	(cd ~/gitrepos/dotfiles && command $@)
 }
 
+# from a jenkins job build url download its full console output and open it in vim
+# creates a temporary directory so you can run :Rg <search term> in vim
+getJenkinsLog(){
+        TMP_DIR=$(mktemp -d)
+        pushd $TMP_DIR
+        JOB_URL=$(echo $1 | egrep -oh 'http.*job.*[0-9]+')
+        LOG_URL="$JOB_URL/consoleText"
+        LOG_FILE=$(echo "$JOB_URL.log" | egrep -oh 'job.*' | sed 's#\/#_#g')
+        wget $LOG_URL -O $LOG_FILE
+        vim $LOG_FILE
+        popd
+        rm -rf $TMP_DIR
+}
+
 ################################### Java #########################################
 # switch to java version
 export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
