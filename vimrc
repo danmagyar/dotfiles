@@ -106,9 +106,10 @@ hi Directory guifg=#FF0000 ctermfg=darkgreen
 autocmd StdinReadPre * let s:std_in=1
 " Start NERDTree and put the cursor back in the other window.
 autocmd VimEnter * NERDTree | wincmd p
+" Exit Vim if NERDTree is the only window left.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
+    \ quit | endif
 
-"" open nerdtree and select currently edited file by pressing `\v`
-nnoremap <silent> <Leader>v :NERDTreeFind<CR>
 
 au BufRead,BufNewFile *.conf set filetype=dosini  " turn on syntax for .conf files
 
