@@ -104,10 +104,8 @@ let NERDTreeShowHidden=1
 hi Directory guifg=#FF0000 ctermfg=darkgreen
 "" auto open NerdTree
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
-"" close nerdtree automatically
-let NERDTreeQuitOnOpen = 1
+" Start NERDTree and put the cursor back in the other window.
+autocmd VimEnter * NERDTree | wincmd p
 
 "" open nerdtree and select currently edited file by pressing `\v`
 nnoremap <silent> <Leader>v :NERDTreeFind<CR>
