@@ -188,7 +188,7 @@ set foldenable                  " enable folding
 set foldlevelstart=10           " open most of the folds by default. If set to 0, all folds will be closed.
 set foldnestmax=10              " folds can be nested. Setting a max value protects you from too many folds.
 set foldmethod=syntax           " enable folding e.g a json array or a python method
-set foldcolumn=4                " indicate folds on the left column 4 levels deep.
+set foldcolumn=0                " indicate folds on the left column 0 levels deep.
 
 
 "################ Misc ################
