@@ -310,3 +310,9 @@ cnoremap <C-k> <Up>
 cnoremap <C-l> <Right>
 
 nmap <leader>uh :GitGutterUndoHunk<cr>
+
+" horrible hack to convert a python dict visually selected into a pretty json,
+" by pressing F5, F6, F7
+vnoremap <F5> :s/'/"/g<cr>
+vnoremap <F6> :s/u"/"/g<cr>
+vnoremap <F7> :!jq<cr>
