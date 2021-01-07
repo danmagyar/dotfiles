@@ -282,8 +282,9 @@ nnoremap <Leader>O :Files<CR>
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
-" <LEADER>c to write buffer to file, git add, commit in verbose mode and reload so GitGutter shows the updated buffer state
-nnoremap <Leader>c :w<CR> :Git commit -av<CR>k :e<CR>
+" <LEADER>c to write buffer to file, git add, commit in verbose mode then reload GitGutter. This needs to be fixed
+nnoremap <Leader>c :w<CR> :Git commit -av<CR>
+autocmd BufWritePost,WinEnter * GitGutterAll
 
 " surround with ", ' or delete the quatation
 nnoremap <Leader>q" ciw""<Esc>P
