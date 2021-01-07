@@ -27,6 +27,7 @@ Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'mbbill/undotree'
 Plug 'jesseleite/vim-agriculture'
 Plug 'wellle/targets.vim'
+Plug 'preservim/tagbar'
 
 call plug#end()
 
@@ -97,7 +98,9 @@ let g:nerdtree_tabs_focus_on_files=1
 let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
 let g:NERDTreeWinSize = 50
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
-nnoremap <silent> <F2> :NERDTreeFind<CR>
+
+" show current file on directory structure, similar to jetbrain products' option+F1+1
+nnoremap <Leader><F1>1 :NERDTreeFind<CR>
 noremap <F3> :NERDTreeToggle<CR>
 "" Make Nerdtree show .files by default
 let NERDTreeShowHidden=1
@@ -113,6 +116,9 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 
 au BufRead,BufNewFile *.conf set filetype=dosini  " turn on syntax for .conf files
 
+"""""Tagbar mapping
+" show current tag on tagbar, similar to jetbrains products' option+F1+3
+nnoremap <Leader><F1>3 :TagbarToggle<cr>
 
 "################ General config ################
 set nocompatible                " use Vim default settings instead of Vi
