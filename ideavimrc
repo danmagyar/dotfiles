@@ -19,7 +19,7 @@ nmap <leader>cdep1 :%s#/data/jenkins/workspace/Cluster-Setup-CDPD/#./#g<cr>
 nmap <leader>cdep2 :%s#/target/env/local#/target/env#g<cr>
 
 " reaveal current file in project view
-nnoremap <Leader><F1>1 :action SelectInProjectView<CR>
+nnoremap <Leader><F2> :action SelectInProjectView<CR>
 
-" reaveal current code part in structure view
-nnoremap <Leader><F1>3 :action ActivateStructureToolWindow<cr>
+" reaveal current file in project view
+nnoremap <Leader><F3> :action ActivateStructureToolWindow<cr>

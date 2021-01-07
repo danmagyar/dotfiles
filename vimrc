@@ -100,7 +100,7 @@ let g:NERDTreeWinSize = 50
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
 
 " show current file on directory structure, similar to jetbrain products' option+F1+1
-nnoremap <Leader><F1>1 :NERDTreeFind<CR>
+nnoremap <Leader><F2> :NERDTreeFind<CR>
 noremap <F3> :NERDTreeToggle<CR>
 "" Make Nerdtree show .files by default
 let NERDTreeShowHidden=1
@@ -118,7 +118,7 @@ au BufRead,BufNewFile *.conf set filetype=dosini  " turn on syntax for .conf fil
 
 """""Tagbar mapping
 " show current tag on tagbar, similar to jetbrains products' option+F1+3
-nnoremap <Leader><F1>3 :TagbarToggle<cr>
+nnoremap <Leader><F3> :TagbarToggle<cr>
 
 "################ General config ################
 set nocompatible                " use Vim default settings instead of Vi
