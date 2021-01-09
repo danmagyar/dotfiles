@@ -327,6 +327,9 @@ vnoremap <leader>x3 :!jq<cr>
 " show current file on directory structure, similar to jetbrain products' option+F1+1
 nnoremap <Leader>2 :NERDTreeFind<CR>
 
+" if in a NERD tree window, close it, else find current file
+nnoremap <expr> <Leader>2 (stridx(bufname(), 'NERD_tree') > -1) ? ':NERDTreeToggle<cr>' : ':NERDTreeFind<CR>'
+
 """""Tagbar mapping
 " show current tag on tagbar, similar to jetbrains products' option+F1+3
 nnoremap <Leader>3 :TagbarToggle<cr>
