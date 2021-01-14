@@ -333,3 +333,13 @@ nnoremap <expr> <Leader>2 (stridx(bufname(), 'NERD_tree') > -1) ? ':NERDTreeTogg
 """""Tagbar mapping
 " show current tag on tagbar, similar to jetbrains products' option+F1+3
 nnoremap <Leader>3 :TagbarToggle<cr>
+
+" Ctrl+Shift+F to fuzzy find in current directory content recursively
+nnoremap <C-S-F> :Rg<CR>
+
+" Ctrl+Shift+O to fuzzy search for a file by name under current directory recursively
+nnoremap <C-S-O> :Files<CR>
+
+" Ctrl+Shift+L to fuzzy browse commits in current branch
+nnoremap <C-S-L> :Commits<CR>
+
