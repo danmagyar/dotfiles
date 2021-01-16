@@ -194,8 +194,24 @@ set foldcolumn=0                " indicate folds on the left column 0 levels dee
 
 "################ Misc ################
 
-" Highlight all occurrences of word under cursor with a dim dark grey color
-au CursorHold,CursorHoldI * :try | exe "call matchdelete(w:my_match)" | catch |  finally | let w:my_match = matchadd('Pmenu', expand('<cword>')) | endtry
+" Highlight all occurrences of word under cursor with a dim dark grey color and underline
+function! HighlightWordUnderCursor()
+    let disabled_ft = ["qf", "fugitive", "nerdtree", "gundo", "diff", "fzf", "floaterm"]
+    if &diff || &buftype == "terminal" || index(disabled_ft, &filetype) >= 0
+        return
+    endif
+    if getline(".")[col(".")-1] !~# '[[:punct:][:blank:]]'
+        hi MatchWord cterm=undercurl gui=undercurl guibg=#3b404a
+        exec 'match' 'MatchWord' '/\V\<'.expand('<cword>').'\>/'
+    else
+        match none
+    endif
+endfunction
+
+augroup MatchWord
+  autocmd!
+  autocmd! CursorHold,CursorHoldI * call HighlightWordUnderCursor()
+augroup END
 
 " fix gx bug on vim8, source: https://github.com/vim/vim/issues/4738#issuecomment-714609892
 function! OpenURLUnderCursor()
