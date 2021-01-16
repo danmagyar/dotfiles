@@ -354,5 +354,6 @@ nnoremap <Leader>F :Rg<CR>
 nnoremap <Leader>O :Files<CR>
 
 " Leader + Shift+L to fuzzy browse commits in current branch
-nnoremap <Leader>L :Commits<CR>
-
+nnoremap <Leader>plc :Commits<CR>
+" Override git log to show
+let g:fzf_commits_log_options = "--full-history --graph --color=always --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
