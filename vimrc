@@ -276,9 +276,6 @@ vnoremap . :normal.<CR>
 " use Ctrl-space to autocomplete words in insert mode
 inoremap <Nul> <C-n>
 
-" fuzzy find and open file with <LEADER>+Shift+O
-nnoremap <Leader>O :Files<CR>
-
 " Move visually selected lines up/down by pressing J/K
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
@@ -334,12 +331,12 @@ nnoremap <expr> <Leader>2 (stridx(bufname(), 'NERD_tree') > -1) ? ':NERDTreeTogg
 " show current tag on tagbar, similar to jetbrains products' option+F1+3
 nnoremap <Leader>3 :TagbarToggle<cr>
 
-" Ctrl+Shift+F to fuzzy find in current directory content recursively
-nnoremap <C-S-F> :Rg<CR>
+" Leader + Shift+F to fuzzy find in current directory content recursively
+nnoremap <Leader>F :Rg<CR>
 
-" Ctrl+Shift+O to fuzzy search for a file by name under current directory recursively
-nnoremap <C-S-O> :Files<CR>
+" Leader + Shift+O fuzzy find and open file with
+nnoremap <Leader>O :Files<CR>
 
-" Ctrl+Shift+L to fuzzy browse commits in current branch
-nnoremap <C-S-L> :Commits<CR>
+" Leader + Shift+L to fuzzy browse commits in current branch
+nnoremap <Leader>L :Commits<CR>
 
