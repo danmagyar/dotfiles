@@ -224,10 +224,10 @@ function! OpenURLUnderCursor()
 endfunction
 nnoremap gx :call OpenURLUnderCursor()<CR>
 
-" show whitespaces by default, toggle with F4
+" show whitespaces by default, toggle with Leader+F4
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<,space:· "whitespaces to show
 set list
-noremap <F4> :set list!<CR>
+noremap <leader><F4> :set list!<CR>
 
 set exrc                        " use project specific vimrc files
 autocmd BufWritePre * :%s/\s\+$//e 	 " exterminatus to trailing whitespaces
