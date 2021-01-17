@@ -64,7 +64,7 @@ getJenkinsLog(){
         LOG_URL="$JOB_URL/consoleText"
         LOG_FILE=$(echo "$JOB_URL.log" | egrep -oh 'job.*' | sed 's#\/#_#g')
         wget $LOG_URL -O $LOG_FILE
-        vim $LOG_FILE
+        vim $LOG_FILE '+?ERROR'
         popd
         rm -rf $TMP_DIR
 }
