@@ -355,5 +355,5 @@ nnoremap <Leader>O :Files<CR>
 
 " Leader + Shift+L to fuzzy browse commits in current branch
 nnoremap <Leader>plc :Commits<CR>
-" Override git log to show
+" Override git log to show colors, authors, commit age
 let g:fzf_commits_log_options = "--full-history --graph --color=always --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
