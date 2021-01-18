@@ -28,7 +28,8 @@ Plug 'mbbill/undotree'
 Plug 'jesseleite/vim-agriculture'
 Plug 'wellle/targets.vim'
 Plug 'preservim/tagbar'
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'raimondi/delimitmate'
+Plug 'ycm-core/YouCompleteMe'
 
 call plug#end()
 
