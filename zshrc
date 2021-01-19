@@ -1,3 +1,4 @@
+zmodload zsh/zprof
 ################### ZSH, iterm2 #############
 export LC_ALL=en_US.UTF-8
 export ZSH='/Users/danielmagyar/.oh-my-zsh'
@@ -266,3 +267,4 @@ alias tdc="todoist sync; todoist l | fzf | sed -r 's/p.*$//' | xargs todoist c"
 ######################################################### Cloudera specific utils ###########################################################
 source ~/gitrepos/cloudera-scrpits/cloudera-utils.sh
 
+zprof
