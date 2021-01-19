@@ -23,3 +23,5 @@ nnoremap <Leader>2 :action SelectInProjectView<CR>
 
 " reaveal current file in project view
 nnoremap <Leader>3 :action ActivateStructureToolWindow<cr>
+
+nnoremap <Leader>plc :action Vcs.Show.Log<CR>
