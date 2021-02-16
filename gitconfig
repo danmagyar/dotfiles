@@ -46,3 +46,17 @@
 	whitespace = red reverse
 [diff-so-fancy]
 	first-run = false
+[alias]
+	s = show --format=fuller
+	ch =  checkout
+	pr = pull --rebase
+	c = commit -a -v
+	ca = commit -a -v --amend
+	rv = remote -v
+	d = diff
+	dg = difftool --gui --no-prompt
+	#plc = +Commits!
+	pl = log HEAD --full-history --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	reml = log origin/master --full-history --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -20
+	prl = reflog --format='%C(auto)%h %<|(20)%gd %C(blue)%cr%C(reset) %gs (%s)'
+	st = status
