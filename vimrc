@@ -381,4 +381,4 @@ let g:fzf_colors =
   \ 'header':  ['fg', 'Comment'] }
 
 " replace the selected text with the output of the base64 shell command via the expression register
-:vnoremap <leader>64 c<c-r>=system('base64 --decode', @")<cr><esc>
+vnoremap <leader>64 c<c-r>=system('base64 --decode', @")<cr><esc>
