@@ -14,6 +14,8 @@ Plug 'mtdl9/vim-log-highlighting'
 Plug 'joshdick/onedark.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'
 Plug 'AndrewRadev/linediff.vim'
 "shows marks

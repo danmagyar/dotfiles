@@ -12,6 +12,12 @@ nmap <leader>c :action CheckinProject<cr>
 nmap [c :action VcsShowPrevChangeMarker<cr>
 nmap ]c :action VcsShowNextChangeMarker<cr>
 
+# ideavim doesn't support default folding maps yet
+nmap za :action CollapseRegion<cr>
+nmap zr :action ExpandRegion<cr>
+nmap zA :action CollapseAllRegions<cr>
+nmap zR :action ExpandAllRegions<cr>
+
 nmap <leader>uh :action Vcs.RollbackChangedLines<cr>
 
 " cdep log failures to analyzable stack trace in pycharm
