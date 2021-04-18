@@ -25,6 +25,8 @@ nmap zr :action ExpandRegion<cr>
 nmap zA :action CollapseAllRegions<cr>
 nmap zR :action ExpandAllRegions<cr>
 
+nmap <leader>vs :action SplitVertically<cr>
+
 nmap <leader>uh :action Vcs.RollbackChangedLines<cr>
 
 " cdep log failures to analyzable stack trace in pycharm
