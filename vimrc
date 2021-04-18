@@ -318,6 +318,8 @@ vnoremap K :m '<-2<CR>gv=gv
 
 " <LEADER>k to write buffer to file, git add, commit in verbose mode then reload GitGutter. This needs to be fixed
 nnoremap <Leader>k :w<CR> :Git commit -av<CR>
+" <LEADER>c to simply commit what's changed. Useful is staged stuff separatly by `git add -p`
+nnoremap <Leader>c :Git commit -v<CR>
 autocmd BufWritePost,WinEnter * GitGutterAll
 
 " surround with ", ' or delete the quatation
