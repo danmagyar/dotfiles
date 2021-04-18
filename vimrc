@@ -160,7 +160,9 @@ set mouse=a                     " enable using the mouse for scrolling, selectin
 set title                       " set the window's title, reflecting the file currently being edited
 set background=dark
 colorscheme onedark             " set color scheme to the one used by atom
-set cursorline                  " mark the entire line the cursor is currently in
+if !&diff
+    set cursorline              " if not in vimdiff, mark the entire line the cursor is currently in
+endif
 " use bold characters on the entire line the cursor is currently in
 highlight CursorLine term=bold cterm=bold
 
