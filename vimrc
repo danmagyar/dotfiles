@@ -316,8 +316,8 @@ inoremap <Nul> <C-n>
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
-" <LEADER>c to write buffer to file, git add, commit in verbose mode then reload GitGutter. This needs to be fixed
-nnoremap <Leader>c :w<CR> :Git commit -av<CR>
+" <LEADER>k to write buffer to file, git add, commit in verbose mode then reload GitGutter. This needs to be fixed
+nnoremap <Leader>k :w<CR> :Git commit -av<CR>
 autocmd BufWritePost,WinEnter * GitGutterAll
 
 " surround with ", ' or delete the quatation
