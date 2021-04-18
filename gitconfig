@@ -10,7 +10,7 @@
 	longpaths = true
 
 [commit]
-	template = /Users/danielmagyar/.stCommitMsg
+	#template = /Users/danielmagyar/.stCommitMsg
 
 [merge]
 	tool = vimdiff
