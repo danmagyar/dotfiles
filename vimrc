@@ -338,8 +338,8 @@ nnoremap <Leader>qv F$xciw""<Esc>Pbi$<Esc>
 " prettyfy json with Control+Shift+P
 nnoremap <silent> <C-S-P> : %!python -m json.tool<CR>
 xnoremap <f1> "zy:!open "http://www.google.com/search?q=<c-r>=substitute(@z,' ','%20','g')<cr>"<return>gv
-" insert current timestamp in normal mode by pressing F5
-nnoremap <F5> "=strftime("%A, %Y %B %d")<CR>P
+" insert current timestamp in normal mode by pressing <Leader>F5
+nnoremap <Leader><F5> "=strftime("%A, %Y %B %d")<CR>P
 
 inoremap <C-h> <Left>
 inoremap <C-j> <Down>
