@@ -11,6 +11,8 @@ set surround
 " use <leader>k to do the equivalent of git commit -av
 nmap <leader>k :action CheckinProject<cr>
 
+" previewhunk
+nmap <leader>ph :action VcsShowCurrentChangeMarker<cr>
 nmap [c :action VcsShowPrevChangeMarker<cr>
 nmap ]c :action VcsShowNextChangeMarker<cr>
 
