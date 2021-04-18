@@ -32,6 +32,7 @@ Plug 'wellle/targets.vim'
 Plug 'preservim/tagbar'
 Plug 'raimondi/delimitmate'
 Plug 'ycm-core/YouCompleteMe'
+Plug 'godlygeek/tabular'
 
 call plug#end()
 
