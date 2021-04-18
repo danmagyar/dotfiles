@@ -375,6 +375,9 @@ nnoremap <Leader>F :Rg<CR>
 " Leader + Shift+O fuzzy find and open file with
 nnoremap <Leader>O :Files<CR>
 
+" Leader + log to view current file with LOG syntax
+nnoremap <Leader>log :set syntax=log<CR>
+
 " Leader + Shift+L to fuzzy browse commits in current branch
 nnoremap <Leader>plc :Commits<CR>
 
