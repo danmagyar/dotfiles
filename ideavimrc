@@ -29,6 +29,9 @@ nmap <leader>vs :action SplitVertically<cr>
 
 nmap <leader>uh :action Vcs.RollbackChangedLines<cr>
 
+" regular Ctrl+N/Ctrl+P feature
+imap <C-n> <ESC>:action HippieCompletion<CR>
+imap <C-p> <ESC>:action HippieBackwardCompletion<CR>
 " cdep log failures to analyzable stack trace in pycharm
 nmap <leader>cdep1 :%s#/data/jenkins/workspace/Cluster-Setup-CDPD/#./#g<cr>
 nmap <leader>cdep2 :%s#/target/env/local#/target/env#g<cr>
