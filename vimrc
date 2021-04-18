@@ -68,6 +68,8 @@ endfunction
 let g:gitgutter_sign_added = '▓'
 let g:gitgutter_sign_modified = '▓'
 let g:gitgutter_sign_removed = '▶'
+let g:toggle_preview_hunk = 0
+au CursorMoved * if g:toggle_preview_hunk && gitgutter#hunk#in_hunk(line(".")) | GitGutterPreviewHunk | else | pclose | endif
 
 " tpope/rhubarb config to use Cloudera internal github
 let g:github_enterprise_urls = ['https://github.infra.cloudera.com']
@@ -347,6 +349,8 @@ cnoremap <C-k> <Up>
 cnoremap <C-l> <Right>
 
 nmap <leader>uh :GitGutterUndoHunk<cr>
+nmap <leader>ph :let g:toggle_preview_hunk=(g:toggle_preview_hunk == 0 ? 1 : 0)<cr>
+nmap <leader>sh :GitGutterStageHunk<cr>
 
 " horrible hack to convert a python dict visually selected into a pretty json,
 " by pressing F5, F6, F7
