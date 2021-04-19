@@ -383,6 +383,9 @@ nnoremap <Leader>log :set syntax=log<CR>
 " Leader + Shift+L to fuzzy browse commits in current branch
 nnoremap <Leader>plc :Commits<CR>
 
+" open selected lines on github
+vnoremap <leader>og :Gbrowse<cr>
+
 function! GerritReview()
   :Git push gerrit HEAD:refs/for/cdh6.x
 endfunction

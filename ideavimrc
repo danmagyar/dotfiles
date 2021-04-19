@@ -25,6 +25,8 @@ nmap zr :action ExpandRegion<cr>
 nmap zA :action CollapseAllRegions<cr>
 nmap zR :action ExpandAllRegions<cr>
 
+" open selected lines on github
+vnoremap <leader>og :action Github.Open.In.Browser<cr>
 nmap <leader>vs :action SplitVertically<cr>
 
 nmap <leader>uh :action Vcs.RollbackChangedLines<cr>
