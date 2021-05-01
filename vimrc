@@ -372,10 +372,14 @@ nnoremap <expr> <Leader>2 (stridx(bufname(), 'NERD_tree') > -1) ? ':NERDTreeTogg
 nnoremap <Leader>3 :TagbarToggle<cr>
 
 " Leader + Shift+F to fuzzy find in current directory content recursively
-nnoremap <Leader>F :Rg<CR>
+" See more on https://jesseleite.com/posts/4/project-search-your-feelings
+nnoremap <Leader>F :RgRaw ''<CR>
+let g:agriculture#rg_options = '--hidden -g "!.git" '
 
 " Leader + Shift+O fuzzy find and open file with
-nnoremap <Leader>O :Files<CR>
+nnoremap <Leader>O :HiddenFiles<CR>
+command! -bang -nargs=? -complete=dir HiddenFiles
+  \ call fzf#vim#files(<q-args>, {'source': 'rg --files --hidden -g "!.git" '}, <bang>0)
 
 " Leader + log to view current file with LOG syntax
 nnoremap <Leader>log :set syntax=log<CR>
