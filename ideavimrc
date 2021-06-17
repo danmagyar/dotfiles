@@ -48,3 +48,6 @@ nnoremap <Leader>plc :action Vcs.Show.Log<CR>
 
 " reset F1 mapping to open up javadoc popup in intellij
 noremap <F1> :action QuickJavaDoc<CR>
+
+" Leader+/ to comment out line/lines
+noremap <Leader>/ :action CommentByLineComment<CR>

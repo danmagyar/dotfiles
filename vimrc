@@ -33,6 +33,7 @@ Plug 'preservim/tagbar'
 Plug 'raimondi/delimitmate'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'godlygeek/tabular'
+Plug 'tpope/vim-commentary'
 
 call plug#end()
 
@@ -415,3 +416,6 @@ let g:fzf_colors =
 
 " replace the selected text with the output of the base64 shell command via the expression register
 vnoremap <leader>64 c<c-r>=system('base64 --decode', @")<cr><esc>
+
+" Leader+/ to comment out line/lines
+noremap <Leader>/ :Commentary<CR>
