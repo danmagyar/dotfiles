@@ -1,6 +1,8 @@
-#Dotfiles
+# Dotfiles
 
-##Setup
+## Setup
+1. Clone this repository
+2. Symlink the wanted files to the default location of these files
 
 ```sh
 ln -sf ~/gitrepos/dotfiles/vimrc ~/.vimrc
