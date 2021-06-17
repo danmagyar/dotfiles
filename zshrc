@@ -30,10 +30,8 @@ plugins=(
 
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.iterm2_shell_integration.zsh
-source ~/gitrepos/dotfiles/scripts/zsh-interactive-cd.plugin.zsh
 source $ZSH/oh-my-zsh.sh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/gitrepos/opensource/pomodoro/pomodoro.sh
 autoload bashcompinit
 bashcompinit
 source ~/.bashrc
@@ -41,6 +39,8 @@ source ~/.bashrc
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # misc
+source ~/gitrepos/dotfiles/scripts/zsh-interactive-cd.plugin.zsh
+source ~/gitrepos/opensource/pomodoro/pomodoro.sh
 alias lookUpHistoryFor='history -i | grep'
 alias getHistoryBetween='fc -lf'
 alias ls='exa --long --header --links --git --time-style long-iso --all --color-scale'
