@@ -323,19 +323,6 @@ nnoremap <Leader>k :w<CR> :Git commit -av<CR>
 nnoremap <Leader>c :Git commit -v<CR>
 autocmd BufWritePost,WinEnter * GitGutterAll
 
-" surround with ", ' or delete the quatation
-nnoremap <Leader>q" ciw""<Esc>P
-nnoremap <Leader>q' ciw''<Esc>P
-nnoremap <Leader>q{ ciw{}<Esc>P
-nnoremap <Leader>q} ciw{}<Esc>P
-nnoremap <Leader>q[ ciw[]<Esc>P
-nnoremap <Leader>q] ciw[]<Esc>P
-nnoremap <Leader>qd daW"=substitute(@@,"'\\\|\"","","g")<CR>P
-
-" quote shell variable properly,
-" e.g. $VAR --> \qv --> <doublequote>$VAR<doublequote>
-nnoremap <Leader>qv F$xciw""<Esc>Pbi$<Esc>
-
 " prettyfy json with Control+Shift+P
 nnoremap <silent> <C-S-P> : %!python -m json.tool<CR>
 xnoremap <f1> "zy:!open "http://www.google.com/search?q=<c-r>=substitute(@z,' ','%20','g')<cr>"<return>gv
