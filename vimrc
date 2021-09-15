@@ -382,6 +382,9 @@ nnoremap <Leader>plc :Commits<CR>
 " open selected lines on github
 vnoremap <leader>og :Gbrowse<cr>
 
+" open git blame
+noremap <Leader>gbl :G blame<CR>
+
 function! GerritReview()
   :Git push gerrit HEAD:refs/for/cdh6.x
 endfunction
