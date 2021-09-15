@@ -1,6 +1,10 @@
 [user]
-        email = daniel.laszlo.magyar@gmail.com
+        email = dmagyar@cloudera.com
         name = Daniel Magyar
+
+; [user]
+;         email = daniel.laszlo.magyar@gmail.com
+;         name = Daniel Magyar
 
 [core]
 	excludesfile = /Users/danielmagyar/.gitignore_global
