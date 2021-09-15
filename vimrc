@@ -288,6 +288,8 @@ autocmd FileType gitcommit exec 'au VimEnter * startinsert'
 " Use space as leader key
 let mapleader = "\<Space>"
 
+nnoremap <leader>load:source ~/.vimrc<CR>
+
 " when pressing n/N show previous/next match in the middle of the screen
 nnoremap n nzz
 nnoremap N Nzz
