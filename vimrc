@@ -38,6 +38,7 @@ Plug 'godlygeek/tabular'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-abolish'
 Plug 'andreshazard/vim-logreview'
+Plug 'PhilRunninger/nerdtree-visual-selection'
 
 call plug#end()
 
