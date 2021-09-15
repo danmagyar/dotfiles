@@ -55,7 +55,7 @@
 	ch =  checkout
 	pr = pull --rebase
 	c = commit -a -v
-	ca = commit -a -v --amend
+	cava = commit -a -v --amend
 	rv = remote -v
 	d = diff
 	dg = difftool --gui --no-prompt
