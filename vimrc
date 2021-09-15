@@ -36,6 +36,7 @@ Plug 'raimondi/delimitmate'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'godlygeek/tabular'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-abolish'
 
 call plug#end()
 
