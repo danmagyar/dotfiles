@@ -1,6 +1,8 @@
 "################ Plugins ################
 " so ~/.vim/plugins.vim
 call plug#begin('~/.vim/plugged')
+Plug 'inkarkat/vim-ingo-library'
+Plug 'inkarkat/vim-mark'
 Plug 'airblade/vim-gitgutter'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'itchyny/lightline.vim'
@@ -406,3 +408,8 @@ vnoremap <leader>64 c<c-r>=system('base64 --decode', @")<cr><esc>
 
 " Leader+/ to comment out line/lines
 noremap <Leader>/ :Commentary<CR>
+
+" Workaround for vim-mark plugin `E227: mapping already exists for  /`:
+" define a dummy mapping that never triggers
+nmap <Plug>DummyDisableMarkSearchAnyNext <Plug>MarkSearchAnyNext
+
