@@ -350,7 +350,7 @@ nmap <leader>ph :let g:toggle_preview_hunk=(g:toggle_preview_hunk == 0 ? 1 : 0)<
 nmap <leader>sh :GitGutterStageHunk<cr>
 
 " Splits a long shell command into new lines. Useful after unleashing ctrl+X+E
-" on a long shell command. Split happens when one of these strings are found: ` && `, ` | `, ` -`
+" on a long shell command. Split happens when one of these strings are found: ` && `, ` | `, ` -`, ` || `
 " example: the following command (1) is turned into (2):
 " (1) cd ~/gitrepos/flink && git commit -a -v --message='this is a commit msg' --amend
 " (2) cd ~/gitrepos/flink && \
@@ -361,7 +361,10 @@ nmap <leader>sh :GitGutterStageHunk<cr>
 "          --amend
 
 function! SplitShellCmd()
-    %s#\( && \)#\1\\ \r\t#ge | %s#\( -\)# \\ \r\t\1#ge | %s#\( | \)#\1\\ \r\t#ge
+    %s#\( && \)#\1\\ \r\t#ge |
+    %s#\( || \)#\1\\ \r\t#ge |
+    %s#\( -\)# \\ \r\t\1#ge |
+    %s#\( | \)#\1\\ \r\t#ge
 endfunction
 nnoremap <leader>ssc :call SplitShellCmd()<CR>
 
