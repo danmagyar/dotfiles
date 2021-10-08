@@ -368,6 +368,13 @@ function! SplitShellCmd()
 endfunction
 nnoremap <leader>ssc :call SplitShellCmd()<CR>
 
+" Insert new line under cursor, very comfy!
+function! BreakHere()
+    s/^\(\s*\)\(.\{-}\)\(\s*\)\(\%#\)\(\s*\)\(.*\)/\1\2\r\1\4\6
+    call histdel("/", -1)
+endfunction
+nnoremap <leader><Enter> :call BreakHere()<CR>
+
 " horrible hack to convert a python dict visually selected into a pretty json,
 " by pressing F5, F6, F7
 vnoremap <leader>x1 :s/'/"/g<cr>
