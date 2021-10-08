@@ -1,11 +1,12 @@
 source ~/.vimrc
-
 set clipboard+=ideaput
 set ideajoin
 set ideamarks
 
 " required acejump plugin colors in order:
 " E3C181 282C34 DC7076 3AFF52 000000
+
+
 set easymotion
 set surround
 " use <leader>k to do the equivalent of git commit -av
@@ -18,6 +19,24 @@ nmap ]c :action VcsShowNextChangeMarker<cr>
 
 nmap <leader>F :action FindInPath<cr>
 nmap <leader>O :action GotoFile<cr>
+
+"show parameter info
+nnoremap <leader>sp :action ParameterInfo<CR>
+
+"show quick doc
+nnoremap <leader>qd :action QuickJavaDoc<CR>
+"
+"show quick implementation
+nnoremap <leader>qi :action QuickImplementations<CR>
+"
+"
+" built-in navigation to navigated items works better
+nnoremap <c-o> :action Back<cr>
+nnoremap <c-i> :action Forward<cr>
+" but preserve ideavim defaults
+nnoremap g<c-o> <c-o>
+nnoremap g<c-i> <c-i>
+
 "
 " built-in navigation to navigated items works better
 nnoremap <c-o> :action Back<cr>
@@ -32,8 +51,8 @@ nmap zr :action ExpandRegion<cr>
 nmap zA :action CollapseAllRegions<cr>
 nmap zR :action ExpandAllRegions<cr>
 
-" open selected lines on github
-vnoremap <leader>og :action Github.Open.In.Browser<cr>
+" open source on github
+noremap <leader>og :action Github.Open.In.Browser<cr>
 nmap <leader>vs :action SplitVertically<cr>
 
 nmap <leader>uh :action Vcs.RollbackChangedLines<cr>
@@ -58,3 +77,5 @@ noremap <F1> :action QuickJavaDoc<CR>
 
 " Leader+/ to comment out line/lines
 noremap <Leader>/ :action CommentByLineComment<CR>
+
+noremap <Leader>gbl :action Annotate<CR>
