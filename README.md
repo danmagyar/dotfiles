@@ -1,4 +1,5 @@
 # Dotfiles
+*Full of vim and vigour*
 
 ## Setup
 1. Clone this repository
