@@ -17,6 +17,8 @@ nmap <leader>ph :action VcsShowCurrentChangeMarker<cr>
 nmap [c :action VcsShowPrevChangeMarker<cr>
 nmap ]c :action VcsShowNextChangeMarker<cr>
 
+nnoremap <Leader>C :action CopyPaths<CR>
+
 nmap <leader>F :action FindInPath<cr>
 nmap <leader>O :action GotoFile<cr>
 
@@ -25,11 +27,10 @@ nnoremap <leader>sp :action ParameterInfo<CR>
 
 "show quick doc
 nnoremap <leader>qd :action QuickJavaDoc<CR>
-"
+
 "show quick implementation
 nnoremap <leader>qi :action QuickImplementations<CR>
-"
-"
+
 " built-in navigation to navigated items works better
 nnoremap <c-o> :action Back<cr>
 nnoremap <c-i> :action Forward<cr>
@@ -37,7 +38,6 @@ nnoremap <c-i> :action Forward<cr>
 nnoremap g<c-o> <c-o>
 nnoremap g<c-i> <c-i>
 
-"
 " built-in navigation to navigated items works better
 nnoremap <c-o> :action Back<cr>
 nnoremap <c-i> :action Forward<cr>

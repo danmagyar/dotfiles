@@ -392,6 +392,9 @@ nnoremap <expr> <Leader>2 (stridx(bufname(), 'NERD_tree') > -1) ? ':NERDTreeTogg
 " show current tag on tagbar, similar to jetbrains products' option+F1+3
 nnoremap <Leader>3 :TagbarToggle<cr>
 
+" Leader + shift + c to copy the absolute path of the current buffer to clipboard
+nnoremap <Leader>C :let @+=expand('%:p')<CR>
+
 " Leader + Shift+F to fuzzy find in current directory content recursively
 " See more on https://jesseleite.com/posts/4/project-search-your-feelings
 nnoremap <Leader>F :RgRaw ''<CR>
