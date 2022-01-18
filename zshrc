@@ -50,7 +50,7 @@ alias cp='cp -v' # verbose copy
 alias mv='mv -v' # verbose move
 alias rm='rm -v' # verbose remove
 
-chsh(){
+chtsh(){
     curl "cheat.sh/$@"
 }
 
