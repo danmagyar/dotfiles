@@ -59,7 +59,6 @@ htop
 httpie
 ipython
 jansson
-jenkins-zh/jcli/jcli
 jez/formulae/git-heatmap
 jq
 kafka
@@ -95,7 +94,7 @@ openssh
 postgresql
 pstree
 pyenv
-python@2
+python
 ranger
 ripgrep
 rlwrap
