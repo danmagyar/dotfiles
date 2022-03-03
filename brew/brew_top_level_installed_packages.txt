@@ -25,6 +25,7 @@ expect
 fasd
 fd
 feh
+ffmpeg
 findutils
 fzf
 gawk
@@ -62,6 +63,7 @@ jenkins-zh/jcli/jcli
 jez/formulae/git-heatmap
 jq
 kafka
+keychain
 kustomize
 lazydocker
 less
@@ -103,6 +105,7 @@ rsync
 rust
 sachaos/todoist/todoist
 sashkab/python/python@3.6
+scala@2.11
 screen
 shellcheck
 source-highlight
