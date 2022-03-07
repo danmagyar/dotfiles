@@ -1,6 +1,13 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 ################### ZSH, iterm2 #############
 export LC_ALL=en_US.UTF-8
-export ZSH='/Users/danielmagyar/.oh-my-zsh'
+export ZSH='/Users/dmagyar/.oh-my-zsh'
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
 
 POWERLEVEL9K_MODE='nerdfont-complete'
@@ -17,21 +24,22 @@ POWERLEVEL9K_CUSTOM_SHELL_LEVEL="if (( SHLVL > 1 )); then echo $SHLVL; fi" #prin
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
   git
   git-prompt
   zsh-syntax-highlighting
   fasd
+  macos
   # keychain
   # gpg-agent
 )
 
 
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.iterm2_shell_integration.zsh
 source $ZSH/oh-my-zsh.sh
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 autoload bashcompinit
 bashcompinit
 source ~/.bashrc
@@ -278,6 +286,13 @@ tddone() {
 alias td='todoist --color'
 alias tdc="todoist sync; todoist l | fzf | sed -r 's/p.*$//' | xargs todoist c"
 
-#
 ######################################################### Cloudera specific utils ###########################################################
-source ~/gitrepos/cloudera-scrpits/cloudera-utils.sh
+source ~/gitrepos/cloudera-scripts/cloudera-utils.sh
+
+
+######################################################### MISC generated ###########################################################
+source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+export PATH="/opt/homebrew/opt/maven@3.5/bin:$PATH"
