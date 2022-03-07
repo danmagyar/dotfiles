@@ -47,6 +47,7 @@ source ~/.bashrc
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # misc
+source "$HOME/.sdkman/bin/sdkman-init.sh"
 source ~/gitrepos/dotfiles/scripts/zsh-interactive-cd.plugin.zsh
 source ~/gitrepos/opensource/pomodoro/pomodoro.sh
 alias lookUpHistoryFor='history -i | grep'
@@ -82,14 +83,8 @@ getJenkinsLog(){
 }
 
 ################################### Java #########################################
-# switch to java version
-export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
-export JAVA_11_HOME=$(/usr/libexec/java_home -v11)
-alias j8='export JAVA_HOME=$JAVA_8_HOME'
-alias j11='export JAVA_HOME=$JAVA_11_HOME'
-
 #use java8 by default
-j8
+sdk use java 8.0.322-zulu
 
 function findClassRecursively(){
     local CLASSNAME=$1
