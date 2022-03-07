@@ -10,19 +10,8 @@ export LC_ALL=en_US.UTF-8
 export ZSH='/Users/dmagyar/.oh-my-zsh'
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
 
-POWERLEVEL9K_MODE='nerdfont-complete'
-POWERLEVEL9K_VIRTUALENV_BACKGROUND='purple'
-POWERLEVEL9K_TIME_BACKGROUND='darkgrey'
-POWERLEVEL9K_TIME_FOREGROUND='grey'
-POWERLEVEL9K_DATE_BACKGROUND='darkgrey'
-POWERLEVEL9K_DATE_FOREGROUND='grey'
-export AWS_DEFAULT_PROFILE=$AWS_OKTA_PROFILE
-POWERLEVEL9K_AWS_BACKGROUND='orange1'
-POWERLEVEL9K_AWS_FOREGROUND='black'
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(date time newline custom_shell_level aws newline docker_machine virtualenv dir vcs status)
-POWERLEVEL9K_CUSTOM_SHELL_LEVEL="if (( SHLVL > 1 )); then echo $SHLVL; fi" #print how many levels deep the current shell is if its a subshell
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
-POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+# The original oh-my-zsh history size is only 10.000, bump it up a notch
+export SAVEHIST=1000000
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
