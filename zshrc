@@ -72,9 +72,6 @@ getJenkinsLog(){
 }
 
 ################################### Java #########################################
-#use java8 by default
-sdk use java 8.0.322-zulu
-
 function findClassRecursively(){
     local CLASSNAME=$1
     find . -name '*.jar' -exec grep -rHls "$CLASSNAME" {} \;
