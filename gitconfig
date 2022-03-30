@@ -64,3 +64,5 @@
 	reml = log origin/master --full-history --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -20
 	prl = reflog --format='%C(auto)%h %<|(20)%gd %C(blue)%cr%C(reset) %gs (%s)'
 	st = status
+[blame]
+	ignoreRevsFile = .git-blame-ignore-revs
