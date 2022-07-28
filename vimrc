@@ -453,3 +453,6 @@ noremap <Leader>/ :Commentary<CR>
 " define a dummy mapping that never triggers
 nmap <Plug>DummyDisableMarkSearchAnyNext <Plug>MarkSearchAnyNext
 
+" Leader+jb to insert a markdown style java code block
+nnoremap <Leader>jb i```java<cr>```<esc>O
+
