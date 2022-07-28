@@ -138,6 +138,7 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 
 
 au BufRead,BufNewFile *.conf set filetype=dosini  " turn on syntax for .conf files
+au BufRead,BufNewFile *.sdl set filetype=json " turn on syntax for .sdl files
 
 
 "################ General config ################
