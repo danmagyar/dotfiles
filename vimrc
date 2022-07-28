@@ -39,6 +39,8 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-abolish'
 Plug 'andreshazard/vim-logreview'
 Plug 'PhilRunninger/nerdtree-visual-selection'
+Plug 'vim-scripts/argtextobj.vim'
+Plug 'machakann/vim-highlightedyank'
 
 call plug#end()
 
