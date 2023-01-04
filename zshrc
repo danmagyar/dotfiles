@@ -5,40 +5,42 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+
+export SDKMAN_DIR=$(brew --prefix sdkman-cli)/libexec
+[[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
+
 ################### ZSH, iterm2 #############
 export LC_ALL=en_US.UTF-8
-export ZSH='/Users/dmagyar/.oh-my-zsh'
+
+# set up plugins by cloning them directly:
+#     git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+#     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+plugins=(
+  git
+  git-prompt
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  autojump
+  macos
+)
+export ZSH='/Users/dan/.oh-my-zsh'
+source $ZSH/oh-my-zsh.sh
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
 
 # The original oh-my-zsh history size is only 10.000, bump it up a notch
 export SAVEHIST=1000000
 
-ZSH_THEME="powerlevel10k/powerlevel10k"
-plugins=(
-  git
-  git-prompt
-  zsh-syntax-highlighting
-  fasd
-  macos
-  # keychain
-  # gpg-agent
-)
-
-
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.iterm2_shell_integration.zsh
-source $ZSH/oh-my-zsh.sh
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-autoload bashcompinit
-bashcompinit
-source ~/.bashrc
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # misc
-source "$HOME/.sdkman/bin/sdkman-init.sh"
 source ~/gitrepos/dotfiles/scripts/zsh-interactive-cd.plugin.zsh
-source ~/gitrepos/opensource/pomodoro/pomodoro.sh
 alias lookUpHistoryFor='history -i | grep'
 alias getHistoryBetween='fc -lf'
 alias ls='exa --long --header --links --git --time-style long-iso --all --color-scale'
@@ -266,10 +268,6 @@ tddone() {
 
 alias td='todoist --color'
 alias tdc="todoist sync; todoist l | fzf | sed -r 's/p.*$//' | xargs todoist c"
-
-######################################################### Cloudera specific utils ###########################################################
-source ~/gitrepos/cloudera-scripts/cloudera-utils.sh
-
 
 ######################################################### MISC generated ###########################################################
 source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
