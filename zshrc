@@ -35,8 +35,6 @@ export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
 # The original oh-my-zsh history size is only 10.000, bump it up a notch
 export SAVEHIST=1000000
 
-source ~/.iterm2_shell_integration.zsh
-
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # misc
