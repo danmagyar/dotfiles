@@ -20,6 +20,7 @@ export LC_ALL=en_US.UTF-8
 # set up plugins by cloning them directly:
 #     git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 #     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+zstyle :omz:plugins:keychain options --quiet
 plugins=(
   git
   git-prompt
@@ -27,6 +28,8 @@ plugins=(
   zsh-syntax-highlighting
   autojump
   macos
+  gpg-agent
+  keychain
 )
 export ZSH='/Users/dan/.oh-my-zsh'
 source $ZSH/oh-my-zsh.sh
