@@ -74,6 +74,8 @@ getJenkinsLog(){
         rm -rf $TMP_DIR
 }
 
+source ~/gitrepos/private-utils/utils.sh
+
 ################################### Java #########################################
 function findClassRecursively(){
     local CLASSNAME=$1
