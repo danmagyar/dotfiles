@@ -76,6 +76,16 @@ getJenkinsLog(){
 
 source ~/gitrepos/private-utils/utils.sh
 
+function bluetoothSwitch(){
+  local headphone_id="94-db-56-70-6c-cd"
+  if [[ $(blueutil -p) == "1" ]]; then
+    blueutil -p 0;
+  else
+    blueutil -p 1;
+    blueutil --connect $headphone_id
+  fi
+}
+
 ################################### Java #########################################
 function findClassRecursively(){
     local CLASSNAME=$1
