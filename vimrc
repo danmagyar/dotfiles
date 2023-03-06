@@ -45,6 +45,10 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install --frozen-lockfile --production',
+  \ 'branch': 'release/0.x'
+  \ }
 call plug#end()
 
 
