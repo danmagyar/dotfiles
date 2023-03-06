@@ -11,4 +11,4 @@ ln -sf ideavimrc ~/.ideavimrc
 ln -sf zshrc ~/.zshrc
 ln -sf gitconfig ~/.gitconfig
 ln -sf p10k.zsh ~/.p10k.zsh
-```
+ln -sf ~/gitrepos/dotfiles/timewarrior/timewarrior.cfg ~/.timewarrior/timewarrior.cfg```
