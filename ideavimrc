@@ -94,3 +94,10 @@ noremap <F1> :action QuickJavaDoc<CR>
 noremap <Leader>/ :action CommentByLineComment<CR>
 
 noremap <Leader>gbl :action Annotate<CR>
+
+nnoremap <Leader>mo :action MoveEditorToOppositeTabGroup<CR>
+
+nnoremap <Leader>r :action Run<CR>
+nnoremap <Leader>' :action Run<CR>
+
+nnoremap <Leader>d :action Debug<CR>
