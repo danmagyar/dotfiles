@@ -75,6 +75,7 @@ getJenkinsLog(){
 }
 
 source ~/gitrepos/private-utils/utils.sh
+source ~/gitrepos/private-utils/spotify_utils.sh
 
 function bluetoothSwitch(){
   local headphone_id="94-db-56-70-6c-cd"
