@@ -427,7 +427,7 @@ nnoremap <Leader>log :set syntax=log<CR>
 nnoremap <Leader>plc :Commits<CR>
 
 " open selected lines on github
-vnoremap <leader>og :Gbrowse<cr>
+vnoremap <leader>og :GBrowse<cr>
 
 " open git blame
 noremap <Leader>gbl :G blame<CR>
