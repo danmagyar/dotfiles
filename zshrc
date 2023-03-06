@@ -172,6 +172,8 @@ nSquashCommit(){
 }
 
 ###########################  Oh my god, it's so fuzzy I'm gonna die ############################
+
+source ~/gitrepos/fzf-git.sh/fzf-git.sh
 export FZF_DEFAULT_COMMAND='rg --files --hidden -g "!.git" '
 
 # useful command line shortcuts, e.g CTRL+R support
