@@ -27,7 +27,8 @@ Plug 'easymotion/vim-easymotion'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'plasticboy/vim-markdown'
 Plug 'google/vim-searchindex'
-Plug 'JamshedVesuna/vim-markdown-preview'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+Plug 'mzlogin/vim-markdown-toc'
 Plug 'mbbill/undotree'
 Plug 'jesseleite/vim-agriculture'
 Plug 'wellle/targets.vim'
@@ -289,6 +290,8 @@ autocmd BufEnter * call SetTerminalTitle()
 " git commit opens vim in insert mode when run from terminal
 autocmd FileType gitcommit exec 'au VimEnter * startinsert'
 
+" Preview markdown file
+nmap <C-p> <Plug>MarkdownPreviewToggle
 
 "################ Maps (shortcuts) ################
 " Use space as leader key
