@@ -42,6 +42,8 @@ Plug 'andreshazard/vim-logreview'
 Plug 'PhilRunninger/nerdtree-visual-selection'
 Plug 'vim-scripts/argtextobj.vim'
 Plug 'machakann/vim-highlightedyank'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 
 call plug#end()
 
@@ -143,6 +145,9 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 au BufRead,BufNewFile *.conf set filetype=dosini  " turn on syntax for .conf files
 au BufRead,BufNewFile *.sdl set filetype=json " turn on syntax for .sdl files
 
+" Turn on LimeLight along with Goyo for maximal focus
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
 
 "################ General config ################
 set nocompatible                " use Vim default settings instead of Vi
