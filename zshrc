@@ -78,12 +78,10 @@ source ~/gitrepos/private-utils/utils.sh
 source ~/gitrepos/private-utils/spotify_utils.sh
 
 function bluetoothSwitch(){
-  local headphone_id="94-db-56-70-6c-cd"
+  blueutil --power toggle
   if [[ $(blueutil -p) == "1" ]]; then
-    blueutil -p 0;
-  else
-    blueutil -p 1;
-    blueutil --connect $headphone_id
+    blueutil --connect $EARBUDS_ID &
+    blueutil --connect $HEADPHONE_ID &
   fi
 }
 
@@ -284,6 +282,11 @@ tddone() {
 
 alias td='todoist --color'
 alias tdc="todoist sync; todoist l | fzf | sed -r 's/p.*$//' | xargs todoist c"
+
+
+######################################################### Taskwarrior ###########################################################
+alias tw='taskwarrior-tui'
+
 
 ######################################################### MISC generated ###########################################################
 source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
