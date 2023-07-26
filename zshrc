@@ -56,8 +56,8 @@ chtsh(){
 }
 
 dotcmd(){
-	#cd in a subshell, to execute a command locally
-	(cd ~/gitrepos/dotfiles && command $@)
+    #cd in a subshell, to execute a command locally
+    (cd ~/gitrepos/dotfiles && command $@)
 }
 
 # from a jenkins job build url download its full console output and open it in vim
@@ -180,19 +180,19 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden -g "!.git" '
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 fcs() {
-	PROMPT_EOL_MARK=''
-	local commits commit
-	commits=$(git log --color=always --pretty=oneline --abbrev-commit --reverse) &&
-	commit=$(echo "$commits" | fzf --tac +s +m -e --ansi --reverse) &&
-	echo -n $(echo "$commit" | sed "s/ .*//" | sed 's|%||')
+    PROMPT_EOL_MARK=''
+    local commits commit
+    commits=$(git log --color=always --pretty=oneline --abbrev-commit --reverse) &&
+    commit=$(echo "$commits" | fzf --tac +s +m -e --ansi --reverse) &&
+    echo -n $(echo "$commit" | sed "s/ .*//" | sed 's|%||')
 }
 
 # fuzzy checkout commit
 fchc() {
-	local commits commit
-	commits=$(git log --pretty=oneline --abbrev-commit --reverse) &&
-	commit=$(echo "$commits" | fzf --tac +s +m -e) &&
-	git checkout $(echo "$commit" | sed "s/ .*//")
+    local commits commit
+    commits=$(git log --pretty=oneline --abbrev-commit --reverse) &&
+    commit=$(echo "$commits" | fzf --tac +s +m -e) &&
+    git checkout $(echo "$commit" | sed "s/ .*//")
 }
 
 alias glNoGraph='git log --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr% C(auto)%an" "$@"'
@@ -201,21 +201,21 @@ _viewGitLogLine="$_gitLogLineToHash | xargs -I % sh -c 'git show --color=always 
 
 # fchc_preview - checkout commit with diff previews
 fchc_preview() {
-	local commit
-	commit=$( glNoGraph |
-		fzf --no-sort --reverse --tiebreak=index --no-multi \
-			--ansi --preview="$_viewGitLogLine" ) &&
-	git checkout $(echo "$commit" | sed "s/ .*//")
+    local commit
+    commit=$( glNoGraph |
+        fzf --no-sort --reverse --tiebreak=index --no-multi \
+            --ansi --preview="$_viewGitLogLine" ) &&
+    git checkout $(echo "$commit" | sed "s/ .*//")
 }
 
 # fs_preview - git commit browser with previews
 fs_preview() {
-	glNoGraph |
-	fzf --no-sort --reverse --tiebreak=index --no-multi \
-		--ansi --preview="$_viewGitLogLine" \
-		--header "enter to view, alt-y to copy hash" \
-		--bind "enter:execute:$_viewGitLogLine   | less -R" \
-		--bind "alt-y:execute:$_gitLogLineToHash | xclip"
+    glNoGraph |
+    fzf --no-sort --reverse --tiebreak=index --no-multi \
+        --ansi --preview="$_viewGitLogLine" \
+        --header "enter to view, alt-y to copy hash" \
+        --bind "enter:execute:$_viewGitLogLine   | less -R" \
+        --bind "alt-y:execute:$_gitLogLineToHash | xclip"
 }
 
 # fuzzy git diff, showing files changed on the left, changed lines on the right in preview
@@ -237,8 +237,8 @@ alias fhistory="history -i | fzf +s --tac | cut -d' ' -f5-"
 
 # fuzzy find in man pages
 fman() {
-	export MANPATH='/usr/share/man'
-	f=$(fd . $MANPATH/man${1:-1} -t f -x echo {/.} | fzf) && man $f
+    export MANPATH='/usr/share/man'
+    f=$(fd . $MANPATH/man${1:-1} -t f -x echo {/.} | fzf) && man $f
 }
  # find-in-file: - usage: fif <searchTerm>
 fif() { rg --files-with-matches --no-messages $1 | fzf --preview "highlight -O ansi -l {} 2> /dev/null | rg --colors 'match:bg:yellow' --ignore-case --pretty --context 10 $1 || rg --ignore-case --pretty --context 10 $1 {}" }
@@ -257,13 +257,13 @@ fchr_preview() {
   local tags branches target
   tags=$(git tag | awk '{print "\x1b[31;1mtag\x1b[m\t" $1}') || return
   branches=$(git branch --all | grep -v HEAD |
-		sed "s/.* //" | sed "s#remotes/[^/]*/##" |
-		sort -u | awk '{print "\x1b[34;1mbranch\x1b[m\t" $1}') || return
+        sed "s/.* //" | sed "s#remotes/[^/]*/##" |
+        sort -u | awk '{print "\x1b[34;1mbranch\x1b[m\t" $1}') || return
   target=$(
-	(echo "$tags"; echo "$branches") |
-    	fzf --no-hscroll --no-multi --delimiter="\t" -n 2 \
-        	--ansi --preview="git log -200 --pretty=format:%s $(echo {+2..} |  sed 's/$/../' )" ) || return
-  	git checkout $(echo "$target" | awk '{print $2}')
+    (echo "$tags"; echo "$branches") |
+        fzf --no-hscroll --no-multi --delimiter="\t" -n 2 \
+            --ansi --preview="git log -200 --pretty=format:%s $(echo {+2..} |  sed 's/$/../' )" ) || return
+    git checkout $(echo "$target" | awk '{print $2}')
 }
 
 
