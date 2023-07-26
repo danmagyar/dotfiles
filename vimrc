@@ -141,10 +141,7 @@ noremap <F3> :NERDTreeToggle<CR>
 "" Make Nerdtree show .files by default
 let NERDTreeShowHidden=1
 hi Directory guifg=#FF0000 ctermfg=darkgreen
-"" auto open NerdTree
-autocmd StdinReadPre * let s:std_in=1
-" Start NERDTree and put the cursor back in the other window.
-autocmd VimEnter * NERDTree | wincmd p
+
 " Exit Vim if NERDTree is the only window left.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
     \ quit | endif
