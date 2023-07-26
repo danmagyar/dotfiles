@@ -3,12 +3,17 @@
 
 ## Setup
 1. Clone this repository
-2. Symlink the wanted files to the default location of these files
 
+2. Install `brew`
+
+3. Install `rcm`
 ```sh
-ln -sf vimrc ~/.vimrc
-ln -sf ideavimrc ~/.ideavimrc
-ln -sf zshrc ~/.zshrc
-ln -sf gitconfig ~/.gitconfig
-ln -sf p10k.zsh ~/.p10k.zsh
-ln -sf ~/gitrepos/dotfiles/timewarrior/timewarrior.cfg ~/.timewarrior/timewarrior.cfg```
+brew install rcm
+```
+
+4. Symlink the wanted files to the default location of these files
+```sh
+rcup -v -x 'README.md' -d ~/gitrepos/dotfiles
+```
+
+
