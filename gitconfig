@@ -1,68 +1,66 @@
 [user]
-	name = Daniel Magyar
-	email = daniel.laszlo.magyar@gmail.com
+    name = Daniel Magyar
+    email = daniel.laszlo.magyar@gmail.com
 
 [diff "pandoc"]
      textconv=pandoc --to=markdown
      prompt = false
 
 [core]
-	excludesfile = /Users/danielmagyar/.gitignore_global
-	editor = vim
+    excludesfile = /Users/danielmagyar/.gitignore_global
+    editor = vim
         pager = diff-so-fancy | less --tabs=4 -RFX
-	autocrlf = false
-	longpaths = true
+    autocrlf = false
+    longpaths = true
 
 [commit]
-	#template = /Users/danielmagyar/.stCommitMsg
+    #template = /Users/danielmagyar/.stCommitMsg
 
 [merge]
-	tool = vimdiff
-	conflictstyle = diff3
-	prompt = false
+    tool = vimdiff
+    conflictstyle = diff3
+    prompt = false
 [diff]
-	tool = vimdiff
+    tool = vimdiff
 
-[reviewboard]
-	url = http://review.infra.cloudera.com
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
 [pull]
-	rebase = true
+    rebase = true
 [rebase]
-	autoStash = true
+    autoStash = true
 [color]
-	ui = true
+    ui = true
 [color "diff-highlight"]
-	oldNormal = red bold
-	oldHighlight = red bold 52
-	newNormal = green bold
-	newHighlight = green bold 22
+    oldNormal = red bold
+    oldHighlight = red bold 52
+    newNormal = green bold
+    newHighlight = green bold 22
 [color "diff"]
-	meta = yellow
-	frag = magenta bold
-	commit = yellow bold
-	old = red bold
-	new = green bold
-	whitespace = red reverse
+    meta = yellow
+    frag = magenta bold
+    commit = yellow bold
+    old = red bold
+    new = green bold
+    whitespace = red reverse
 [diff-so-fancy]
-	first-run = false
+    first-run = false
 [alias]
-	s = show --format=fuller
-	ch =  checkout
-	pr = pull --rebase
-	c = commit -a -v
-	cava = commit -a -v --amend
-	rv = remote -v
-	d = diff
-	dg = difftool --gui --no-prompt
-	#plc = +Commits!
-	pl = log HEAD --full-history --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-	reml = log origin/master --full-history --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -20
-	prl = reflog --format='%C(auto)%h %<|(20)%gd %C(blue)%cr%C(reset) %gs (%s)'
-	st = status
+    s = show --format=fuller
+    ch =  checkout
+    pr = pull --rebase
+    c = commit -a -v
+    cava = commit -a -v --amend
+    rv = remote -v
+    d = diff
+    dg = difftool --gui --no-prompt
+    #plc = +Commits!
+    pl = log HEAD --full-history --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    reml = log origin/master --full-history --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -20
+    prl = reflog --format='%C(auto)%h %<|(20)%gd %C(blue)%cr%C(reset) %gs (%s)'
+    st = status
 [blame]
-	ignoreRevsFile = .git-blame-ignore-revs
+    ignoreRevsFile = .git-blame-ignore-revs

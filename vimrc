@@ -55,7 +55,7 @@ Plug 'prettier/vim-prettier', {
 call plug#end()
 
 
-"################ Plugin confiigs and maps ################
+"################ Plugin configs and maps ################
 " use lightline plugin to display fancy onedark statusline with git branch
 let g:lightline = {
         \ 'colorscheme': 'one',
@@ -83,15 +83,12 @@ function! LightlineFilename()
 endfunction
 
 
-" git gutter character customization to be consistent with idea
+" git gutter character customization to be consistent with intellij idea
 let g:gitgutter_sign_added = '▓'
 let g:gitgutter_sign_modified = '▓'
 let g:gitgutter_sign_removed = '▶'
 let g:toggle_preview_hunk = 0
 au CursorMoved * if g:toggle_preview_hunk && gitgutter#hunk#in_hunk(line(".")) | GitGutterPreviewHunk | else | pclose | endif
-
-" tpope/rhubarb config to use Cloudera internal github
-let g:github_enterprise_urls = ['https://github.infra.cloudera.com']
 
 " vim-plug plugin manager config
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -464,10 +461,6 @@ vnoremap <leader>og :GBrowse<cr>
 
 " open git blame
 noremap <Leader>gbl :G blame<CR>
-
-function! GerritReview()
-  :Git push gerrit HEAD:refs/for/cdh6.x
-endfunction
 
 " Override git log to show colors, authors, commit age
 let g:fzf_commits_log_options = "--full-history --graph --color=always --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
