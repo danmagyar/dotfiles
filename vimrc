@@ -44,6 +44,9 @@ Plug 'vim-scripts/argtextobj.vim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
+Plug 'dhruvasagar/vim-table-mode'
+Plug 'rakr/vim-one'
+Plug 'github/copilot.vim'
 
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install --frozen-lockfile --production',
