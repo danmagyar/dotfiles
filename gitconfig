@@ -1,10 +1,10 @@
 [user]
-        email = dmagyar@cloudera.com
-        name = Daniel Magyar
+	name = Daniel Magyar
+	email = daniel.laszlo.magyar@gmail.com
 
-; [user]
-;         email = daniel.laszlo.magyar@gmail.com
-;         name = Daniel Magyar
+[diff "pandoc"]
+     textconv=pandoc --to=markdown
+     prompt = false
 
 [core]
 	excludesfile = /Users/danielmagyar/.gitignore_global
