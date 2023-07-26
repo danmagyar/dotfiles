@@ -1,57 +1,61 @@
-"################ Plugins ################
-" so ~/.vim/plugins.vim
-call plug#begin('~/.vim/plugged')
-Plug 'inkarkat/vim-ingo-library'
-Plug 'inkarkat/vim-mark'
-Plug 'airblade/vim-gitgutter'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'itchyny/lightline.vim'
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
-Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-surround'
-Plug 'w0rp/ale'
-Plug 'mtdl9/vim-log-highlighting'
-Plug 'joshdick/onedark.vim'
-Plug 'sheerun/vim-polyglot'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-rhubarb'
-Plug 'AndrewRadev/linediff.vim'
-"shows marks
-Plug 'kshenoy/vim-signature'
-Plug 'unblevable/quick-scope'
-Plug 'easymotion/vim-easymotion'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'plasticboy/vim-markdown'
-Plug 'google/vim-searchindex'
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-Plug 'mzlogin/vim-markdown-toc'
-Plug 'mbbill/undotree'
-Plug 'jesseleite/vim-agriculture'
-Plug 'wellle/targets.vim'
-Plug 'preservim/tagbar'
-Plug 'raimondi/delimitmate'
-Plug 'ycm-core/YouCompleteMe'
-Plug 'godlygeek/tabular'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-abolish'
-Plug 'andreshazard/vim-logreview'
-Plug 'PhilRunninger/nerdtree-visual-selection'
-Plug 'vim-scripts/argtextobj.vim'
-Plug 'machakann/vim-highlightedyank'
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
-Plug 'dhruvasagar/vim-table-mode'
-Plug 'rakr/vim-one'
-Plug 'github/copilot.vim'
 
+"################ Plugins ################
+call plug#begin('~/.vim/plugged')
+
+Plug 'inkarkat/vim-ingo-library'                          " Library functions for Vim plugins developed by Ingo Karkat.
+Plug 'inkarkat/vim-mark'                                  " Provides persistent file marks and jumps between them.
+Plug 'airblade/vim-gitgutter'                             " Shows git diff in the sign column.
+Plug 'editorconfig/editorconfig-vim'                      " EditorConfig plugin for Vim.
+Plug 'itchyny/lightline.vim'                              " A light and configurable statusline/tabline plugin for Vim.
+Plug 'junegunn/fzf'                                       " A general-purpose command-line fuzzy finder.
+Plug 'junegunn/fzf.vim'                                   " Fuzzy finder plugin for Vim.
+Plug 'scrooloose/nerdtree'                                " A file system explorer for Vim.
+Plug 'tpope/vim-eunuch'                                   " Vim sugar for the UNIX shell commands that need it the most.
+Plug 'tpope/vim-surround'                                 " Deals with pairs of surroundings in Vim.
+Plug 'w0rp/ale'                                           " Asynchronous linting/fixing for Vim and Language Server Protocol (LSP) integration.
+Plug 'mtdl9/vim-log-highlighting'                         " Vim syntax highlighting for log files.
+Plug 'joshdick/onedark.vim'                               " A dark Vim/Neovim color scheme inspired by Atom's One Dark syntax theme.
+Plug 'sheerun/vim-polyglot'                               " A collection of language packs for Vim.
+Plug 'tpope/vim-fugitive'                                 " A Git wrapper for Vim.
+Plug 'tpope/vim-unimpaired'                               " Provides pairs of handy bracket mappings.
+Plug 'tpope/vim-repeat'                                   " Enable repeating supported plugin maps with `.`
+Plug 'tpope/vim-rhubarb'                                  " GitHub extension for fugitive.vim.
+Plug 'AndrewRadev/linediff.vim'                           " Perform a diff on two blocks of text.
+Plug 'kshenoy/vim-signature'                              " Plugin to place, toggle and display marks.
+Plug 'unblevable/quick-scope'                             " Highlights and allows quickly jumping to characters.
+Plug 'easymotion/vim-easymotion'                          " Provides a quick movement in Vim with minimal keystrokes.
+Plug 'Xuyuanp/nerdtree-git-plugin'                        " A plugin of NERDTree showing git status flags.
+Plug 'plasticboy/vim-markdown'                            " Markdown Vim mode.
+Plug 'google/vim-searchindex'                             " Maintains and displays a count of search matches.
+" Real-time preview for Markdown documents.
+Plug 'iamcco/markdown-preview.nvim', {
+  \ 'do': { -> mkdp#util#install() },
+  \ 'for': ['markdown', 'vim-plug']}
+Plug 'mzlogin/vim-markdown-toc'                           " Generates table of contents for Markdown files.
+Plug 'mbbill/undotree'                                    " Visualizes undo history and allows switching between undo branches.
+Plug 'jesseleite/vim-agriculture'                         " Interface for the Ag (The Silver Searcher) search tool.
+Plug 'wellle/targets.vim'                                 " Provides additional text objects.
+Plug 'preservim/tagbar'                                   " Displays tags in a window, ordered by scope.
+Plug 'raimondi/delimitmate'                               " Auto-closes brackets and quotes.
+Plug 'ycm-core/YouCompleteMe'                             " A code-completion engine for Vim.
+Plug 'godlygeek/tabular'                                  " Helps align text.
+Plug 'tpope/vim-commentary'                               " Adds comment motions and operators.
+Plug 'tpope/vim-abolish'                                  " Helps with case, abbreviations, and word replacement.
+Plug 'andreshazard/vim-logreview'                         " Simplifies log file review process.
+Plug 'PhilRunninger/nerdtree-visual-selection'            " Allows visually selecting in the NERDTree.
+Plug 'vim-scripts/argtextobj.vim'                         " Text object like motions for arguments.
+Plug 'machakann/vim-highlightedyank'                      " Highlights yanked and pasted text.
+Plug 'junegunn/goyo.vim'                                  " Distraction-free writing in Vim.
+Plug 'junegunn/limelight.vim'                             " Highlights the paragraph where the cursor is.
+Plug 'dhruvasagar/vim-table-mode'                         " Automated table creator & formatter.
+Plug 'rakr/vim-one'                                       " Adaptation of one-light and one-dark color schemes from Atom.
+Plug 'github/copilot.vim'                                 " GitHub Copilot, an AI pair programmer, for Vim.
+" A Vim plugin for the JavaScript formatter Prettier.
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install --frozen-lockfile --production',
   \ 'branch': 'release/0.x'
   \ }
+
 call plug#end()
 
 
