@@ -502,3 +502,6 @@ nmap <Plug>DummyDisableMarkSearchAnyNext <Plug>MarkSearchAnyNext
 nnoremap <Leader>jb i```java<cr>```<esc>O
 
 let g:ycm_filetype_blacklist = {}
+
+" Ctrl+b in insert mode to make text bold I'm about to write, i.e.: insert **** and move cursor to the middle
+inoremap <C-b> ****<left><left>
