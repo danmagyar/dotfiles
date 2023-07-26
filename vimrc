@@ -58,7 +58,8 @@ call plug#end()
 "################ Plugin confiigs and maps ################
 " use lightline plugin to display fancy onedark statusline with git branch
 let g:lightline = {
-        \ 'colorscheme': 'onedark',
+        \ 'colorscheme': 'one',
+        \ 'background': 'light',
         \ 'active': {
         \   'left': [  [ 'mode', 'paste' ],
         \              [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
@@ -182,8 +183,18 @@ autocmd InsertLeave * :setlocal relativenumber
 set visualbell                  " flash screen on error
 set mouse=a                     " enable using the mouse for scrolling, selecting
 set title                       " set the window's title, reflecting the file currently being edited
-set background=dark
-colorscheme onedark             " set color scheme to the one used by atom
+
+" set background and syntaxhighlight to light/dark based on macos settings
+let output =  system("defaults read -g AppleInterfaceStyle")
+if v:shell_error != 0
+    set background=light
+    colorscheme one " set color scheme to the one used by atom
+else
+    set background=dark
+    colorscheme onedark
+endif
+
+
 if !&diff
     set cursorline              " if not in vimdiff, mark the entire line the cursor is currently in
 endif
@@ -243,7 +254,7 @@ function! HighlightWordUnderCursor()
         return
     endif
     if getline(".")[col(".")-1] !~# '[[:punct:][:blank:]]'
-        hi MatchWord cterm=undercurl gui=undercurl guibg=#3b404a
+        hi MatchWord cterm=undercurl gui=undercurl guibg=lightgreen
         exec 'match' 'MatchWord' '/\V\<'.expand('<cword>').'\>/'
     else
         match none
