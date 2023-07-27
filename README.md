@@ -4,7 +4,13 @@
 ## Setup
 1. Clone this repository
 
-2. Install `brew` and run `brew bundle` from this directory
+2. Install `brew` and run `brew bundle` from this directory to install everything from the `Brewfile`
+   ```shell
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+   eval "$(/opt/homebrew/bin/brew shellenv)"
+   brew bundle
+   ```
 
 3. Install `rcm`
     ```sh
