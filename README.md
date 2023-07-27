@@ -4,7 +4,7 @@
 ## Setup
 1. Clone this repository
 
-2. Install `brew`
+2. Install `brew` and run `brew bundle` from this directory
 
 3. Install `rcm`
 ```sh
