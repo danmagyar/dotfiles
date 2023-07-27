@@ -74,9 +74,22 @@ getJenkinsLog(){
         rm -rf $TMP_DIR
 }
 
-source ~/gitrepos/private-utils/utils.sh
-source ~/gitrepos/private-utils/spotify_utils.sh
+##################### Source private dotfiles scripts ############################
+source_if_executable() {
+  local file="$1"
+  if [ -x "$file" ]; then
+    . "$file"
+  fi
+}
 
+local private_scripts_path="${HOME}/.private-scripts"
+
+# Use find to recursively search the scripts directory
+find -L "${private_scripts_path}" -type f | while IFS= read -r file; do
+  source_if_executable "$file"
+done
+
+##################### Bluetooth ########################################
 function bluetoothSwitch(){
   blueutil --power toggle
   if [[ $(blueutil -p) == "1" ]]; then
