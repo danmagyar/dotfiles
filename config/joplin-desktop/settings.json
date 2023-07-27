@@ -1,0 +1,58 @@
+{
+	"$schema": "https://joplinapp.org/schema/settings.json",
+	"locale": "en_US",
+	"api.token": "279832db2ca31ded048386977fb6fb4a777d162e87273e6d3d3a533ce4e4f6685c890234771ef91385c424b3b5671e14d31a4fdda58cf1108fae01d210dd2595",
+	"markdown.plugin.softbreaks": true,
+	"markdown.plugin.typographer": true,
+	"spellChecker.languages": [
+		"en-GB"
+	],
+	"ui.layout": {
+		"key": "root",
+		"children": [
+			{
+				"key": "sideBar",
+				"width": 250,
+				"visible": true
+			},
+			{
+				"key": "noteList",
+				"width": 250,
+				"visible": true
+			},
+			{
+				"key": "editor",
+				"visible": true
+			}
+		],
+		"visible": true
+	},
+	"noteVisiblePanes": [
+		"editor",
+		"viewer"
+	],
+	"sync.target": 2,
+	"sync.2.path": "/Users/dan/gitrepos/joplin-notes",
+	"dateFormat": "YYYY/MM/DD",
+	"theme": 1,
+	"editor.keyboardMode": "vim",
+	"markdown.plugin.fountain": false,
+	"markdown.plugin.sub": true,
+	"markdown.plugin.sup": true,
+	"markdown.plugin.abbr": true,
+	"editor.codeView": true,
+	"editor": "/Applications/TerminalVim.app",
+	"notes.sortOrder.reverse": true,
+	"notes.perFieldReverse": {
+		"user_updated_time": true,
+		"user_created_time": true,
+		"title": false,
+		"order": false
+	},
+	"themeAutoDetect": true,
+	"style.editor.fontFamily": "MesloLGS NF",
+	"style.editor.monospaceFontFamily": "MesloLGS NF",
+	"markdown.plugin.deflist": true,
+	"markdown.plugin.emoji": true,
+	"markdown.plugin.multitable": true
+}
