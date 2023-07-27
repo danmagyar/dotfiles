@@ -93,8 +93,8 @@ done
 function bluetoothSwitch(){
   blueutil --power toggle
   if [[ $(blueutil -p) == "1" ]]; then
-    blueutil --connect $EARBUDS_ID &
-    blueutil --connect $HEADPHONE_ID &
+    blueutil --connect $SECRET_EARBUDS_ID &
+    blueutil --connect $SECRET_HEADPHONE_ID &
   fi
 }
 
