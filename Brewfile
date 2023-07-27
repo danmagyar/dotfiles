@@ -335,5 +335,10 @@ cask "slack"
 cask "visual-studio-code"
 # Video communication and virtual meeting platform
 cask "zoom"
+# Manual
+cask "microsoft-teams"
+# Manual
+cask "joplin"
+
 vscode "vscodevim.vim"
 vscode "yzhang.markdown-all-in-one"
