@@ -84,6 +84,8 @@ brew "ffmpeg"
 brew "findutils"
 # Command-line fuzzy finder written in Go
 brew "fzf"
+# Manual
+brew "flyway"
 # GNU awk utility
 brew "gawk"
 # GNU compiler collection
