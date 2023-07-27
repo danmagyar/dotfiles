@@ -15,5 +15,10 @@
     ```sh
     rcup -v -x 'README.md' -d ~/gitrepos/dotfiles
     ```
+   
+5. Install ohmyzsh
+    ```sh
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    ```
 
 
