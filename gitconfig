@@ -63,4 +63,4 @@
     prl = reflog --format='%C(auto)%h %<|(20)%gd %C(blue)%cr%C(reset) %gs (%s)'
     st = status
 [blame]
-    ignoreRevsFile = .git-blame-ignore-revs
+;     ignoreRevsFile = .git-blame-ignore-revs
