@@ -339,6 +339,8 @@ cask "zoom"
 cask "microsoft-teams"
 # Manual
 cask "joplin"
+cask "alfred"
+cask "logi-options-plus"
 
 vscode "vscodevim.vim"
 vscode "yzhang.markdown-all-in-one"
