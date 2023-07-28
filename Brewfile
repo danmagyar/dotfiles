@@ -1,3 +1,4 @@
+tap "dashlane/tap"
 tap "derailed/k9s"
 tap "homebrew/bundle"
 tap "homebrew/cask"
@@ -65,8 +66,6 @@ brew "emacs"
 brew "exa"
 # Program that can automate interactive applications
 brew "expect"
-# CLI tool for quick access to files and directories
-brew "fasd"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
 # Image loading and rendering library
@@ -319,28 +318,35 @@ brew "jez/formulae/git-heatmap"
 brew "romkatv/powerlevel10k/powerlevel10k"
 # Sdkman - The Software Development Kit Manager
 brew "sdkman/tap/sdkman-cli"
+# Application launcher and productivity software
+cask "alfred"
 # Menu bar weather app
 cask "datweatherdoe"
 # App for note taking, organizing, task lists, and archiving
 cask "evernote"
 # Screen color temperature controller
 cask "flux"
+# Clipboard manager for developers
+cask "flycut"
+# JetBrains tools manager
+cask "jetbrains-toolbox"
+# Note taking and to-do application with synchronization capabilities
+cask "joplin"
+# Software for Logitech devices
+cask "logi-options-plus"
+# Meet, chat, call, and collaborate in just one place
+cask "microsoft-teams"
 # Collaboration platform for API development
 cask "postman"
 # Move and resize windows using keyboard shortcuts or snap areas
 cask "rectangle"
 # Team communication and collaboration software
 cask "slack"
+# Music streaming service
+cask "spotify"
 # Open-source code editor
 cask "visual-studio-code"
 # Video communication and virtual meeting platform
 cask "zoom"
-# Manual
-cask "microsoft-teams"
-# Manual
-cask "joplin"
-cask "alfred"
-cask "logi-options-plus"
-
 vscode "vscodevim.vim"
 vscode "yzhang.markdown-all-in-one"
