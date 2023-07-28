@@ -34,3 +34,4 @@
     git clone git@github.com:junegunn/fzf-git.sh.git ~/gitrepos/fzf-git.sh
     ```
 
+7. load iterm2 preferences from this repository: ![](.README_images/iterm2-preferences.png)
