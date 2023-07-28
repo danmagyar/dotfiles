@@ -35,3 +35,11 @@
     ```
 
 7. load iterm2 preferences from this repository: ![](.README_images/iterm2-preferences.png)
+
+
+## How to
+### refresh brew bundle
+```shell
+rm Brewfile
+brew bundle dump --describe
+```
