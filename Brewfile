@@ -20,6 +20,12 @@ brew "webp"
 brew "jpeg-xl"
 # Codec library for encoding and decoding AV1 video streams
 brew "aom"
+# Companion library to apr, the Apache Portable Runtime library
+brew "apr-util"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@1.1"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.11"
 # Shell extension to jump to frequently used directories
 brew "autojump"
 # Text processing system for reStructuredText
@@ -28,6 +34,8 @@ brew "docutils"
 brew "awscli"
 # Encode and decode base64 files
 brew "base64"
+# High performance key/value database
+brew "berkeley-db"
 # Implementation of the DNS protocols
 brew "bind"
 # GNU binary tools for native development
@@ -54,6 +62,10 @@ brew "diffutils"
 brew "dive"
 # Classic UNIX line editor
 brew "ed"
+# Asynchronous event library
+brew "libevent"
+# Library to load and enumerate PKCS#11 modules
+brew "p11-kit"
 # Validating, recursive, caching DNS resolver
 brew "unbound"
 # GNU Transport Layer Security (TLS) Library
@@ -64,8 +76,12 @@ brew "jansson"
 brew "emacs"
 # Modern replacement for 'ls'
 brew "exa"
+# Tool Command Language
+brew "tcl-tk"
 # Program that can automate interactive applications
 brew "expect"
+# CLI tool for quick access to files and directories
+brew "fasd"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
 # Image loading and rendering library
@@ -76,6 +92,8 @@ brew "feh"
 brew "libass"
 # Framework for layout and rendering of i18n text
 brew "pango"
+# Secure Reliable Transport
+brew "srt"
 # OCR (Optical Character Recognition) engine
 brew "tesseract"
 # Play, record, convert, and stream audio and video
@@ -160,26 +178,36 @@ brew "ipython"
 brew "jq"
 # Command-line note taker
 brew "jrnl"
+# Centralized server for distributed coordination of services
+brew "zookeeper"
 # Open-source distributed event streaming platform
 brew "kafka"
 # User-friendly front-end to ssh-agent(1)
 brew "keychain"
+# Network authentication protocol
+brew "krb5"
 # Template-free customization of Kubernetes YAML manifests
 brew "kustomize"
 # Lazier way to manage everything docker
 brew "lazydocker"
 # Simple terminal UI for git commands
 brew "lazygit"
+# DNS library written in C
+brew "ldns"
 # Pager program similar to more
 brew "less"
 # CSS parsing and manipulation toolkit for GNOME
 brew "libcroco"
+# Provides library functionality for FIDO U2F & FIDO 2.0, including USB
+brew "libfido2"
 # C library for the MaxMind DB file format
 brew "libmaxminddb"
 # Library to Access SMI MIB Information
 brew "libsmi"
 # C library SSHv1/SSHv2 client and server protocols
 brew "libssh"
+# C library implementing the SSH2 protocol
+brew "libssh2"
 # Library for processing keyboard entry from the terminal
 brew "libtermkey"
 # C99 library which implements a VT220 or xterm terminal emulator
@@ -190,6 +218,8 @@ brew "links"
 brew "lua@5.1"
 # Just-In-Time Compiler (JIT) for the Lua programming language
 brew "luajit"
+# Bare libuv bindings for lua
+brew "luv"
 # Text-based web browser
 brew "lynx"
 # LZMA-based compression program similar to gzip or bzip2
@@ -228,6 +258,8 @@ brew "openjdk@17"
 brew "openssh"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
+# Highly capable, feature-rich programming language
+brew "perl"
 # Object-relational database system
 brew "postgresql@14"
 # Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML
@@ -252,6 +284,8 @@ brew "rpm"
 brew "rpm2cpio", link: false
 # Utility that provides fast incremental file transfer
 brew "rsync"
+# Powerful, clean, object-oriented scripting language
+brew "ruby"
 # Safe, concurrent, practical language
 brew "rust"
 # JVM-based programming language
@@ -312,6 +346,8 @@ brew "zsh-autosuggestions"
 brew "zsh-completions"
 # Fish shell like syntax highlighting for zsh
 brew "zsh-syntax-highlighting"
+# Command-line interface for Dashlane
+brew "dashlane/tap/dashlane-cli"
 # Kubernetes CLI To Manage Your Clusters In Style!
 brew "derailed/k9s/k9s"
 # Heatmap of oft-edited files
@@ -328,9 +364,10 @@ cask "datweatherdoe"
 cask "evernote"
 # Screen color temperature controller
 cask "flux"
-# Clipboard manager for developers
-cask "flycut"
-# JetBrains tools manager
+# Clipboard manager
+cask "maccy"
+# Knowledge base that works on top of a local folder of plain text Markdown files
+cask "obsidian"
 cask "jetbrains-toolbox"
 # Note taking and to-do application with synchronization capabilities
 cask "joplin"

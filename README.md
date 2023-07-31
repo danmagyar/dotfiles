@@ -40,6 +40,5 @@
 ## How to
 ### refresh brew bundle
 ```shell
-rm Brewfile
-brew bundle dump --describe
+rm Brewfile && brew bundle dump --describe
 ```
