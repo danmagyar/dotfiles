@@ -67,7 +67,7 @@ nmap zA :action CollapseAllRegions<cr>
 nmap zR :action ExpandAllRegions<cr>
 
 " open source on github
-noremap <leader>og :action Github.Open.In.Browser<cr>
+noremap <leader>og :action Github.Open.In.Browser<cr> \| :action GitLab.Open.In.Browser<cr>
 nmap <leader>vs :action SplitVertically<cr>
 
 nmap <leader>uh :action Vcs.RollbackChangedLines<cr>
