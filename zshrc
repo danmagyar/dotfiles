@@ -34,7 +34,7 @@ plugins=(
 )
 export ZSH='/Users/dan/.oh-my-zsh'
 source $ZSH/oh-my-zsh.sh
-export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$HOME/.scripts:$PATH"
 
 # The original oh-my-zsh history size is only 10.000, bump it up a notch
 export SAVEHIST=1000000
