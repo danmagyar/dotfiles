@@ -205,14 +205,14 @@ set mouse=a                     " enable using the mouse for scrolling, selectin
 set title                       " set the window's title, reflecting the file currently being edited
 
 " set background and syntaxhighlight to light/dark based on macos settings
-let output =  system("defaults read -g AppleInterfaceStyle")
-if v:shell_error != 0
-    set background=light
-    colorscheme one " set color scheme to the one used by atom
-else
+" let output =  system("defaults read -g AppleInterfaceStyle")
+" if v:shell_error != 0
+"     set background=light
+"     colorscheme one " set color scheme to the one used by atom
+" else
     set background=dark
     colorscheme onedark
-endif
+" endif
 
 
 if !&diff
