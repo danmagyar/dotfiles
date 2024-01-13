@@ -30,6 +30,7 @@ plugins=(
   macos
   gpg-agent
   keychain
+  alias-tips
 )
 export ZSH='/Users/dan/.oh-my-zsh'
 source $ZSH/oh-my-zsh.sh
