@@ -80,8 +80,6 @@ brew "exa"
 brew "tcl-tk"
 # Program that can automate interactive applications
 brew "expect"
-# CLI tool for quick access to files and directories
-brew "fasd"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
 # Image loading and rendering library
