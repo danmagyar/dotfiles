@@ -33,7 +33,7 @@
 [rebase]
     autoStash = true
 [color]
-    ui = true
+    ui = auto
 [color "diff-highlight"]
     oldNormal = red bold
     oldHighlight = red bold 52
@@ -64,3 +64,5 @@
     st = status
 [blame]
 ;     ignoreRevsFile = .git-blame-ignore-revs
+[push]
+	autoSetupRemote = true
