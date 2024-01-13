@@ -1,9 +1,9 @@
 {
 	"$schema": "https://joplinapp.org/schema/settings.json",
-	"locale": "en_US",
+	"locale": "en_GB",
 	"api.token": "279832db2ca31ded048386977fb6fb4a777d162e87273e6d3d3a533ce4e4f6685c890234771ef91385c424b3b5671e14d31a4fdda58cf1108fae01d210dd2595",
-	"markdown.plugin.softbreaks": true,
-	"markdown.plugin.typographer": true,
+	"markdown.plugin.softbreaks": false,
+	"markdown.plugin.typographer": false,
 	"spellChecker.languages": [
 		"en-GB"
 	],
@@ -41,7 +41,7 @@
 	"markdown.plugin.sup": true,
 	"markdown.plugin.abbr": true,
 	"editor.codeView": true,
-	"editor": "/Applications/TerminalVim.app",
+	"editor": "/Documents/TerminalVim.app",
 	"notes.sortOrder.reverse": true,
 	"notes.perFieldReverse": {
 		"user_updated_time": true,
