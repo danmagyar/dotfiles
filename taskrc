@@ -25,7 +25,7 @@ data.location=/Users/dan/.task
 
 # Color theme (uncomment one to use)
 #include light-16.theme
-include light-256.theme
+#include light-256.theme
 #include dark-16.theme
 #include dark-256.theme
 #include dark-red-256.theme
@@ -35,14 +35,14 @@ include light-256.theme
 #include dark-yellow-green.theme
 #include dark-gray-256.theme
 #include dark-gray-blue-256.theme
-#include solarized-dark-256.theme
+include solarized-dark-256.theme
 #include solarized-light-256.theme
 #include no-color.theme
 
 context.practice.read=project:practice
 context.practice.write=project:practice
-context.work.read=project:work
-context.work.write=project:work
+context.work.read=project!=learn
+context.work.write=project!=learn
 context.personal.read=project:family or project:private
 context.personal.write=project:family or project:private
 news.version=2.6.0
