@@ -36,6 +36,11 @@
 
 7. load iterm2 preferences from this repository: ![](.README_images/iterm2-preferences.png)
 
+8. Create vim swap file directory
+    ```shell
+    mkdir -p $HOME/.vim/swp/
+    ```
+
 
 ## How to
 ### refresh brew bundle
