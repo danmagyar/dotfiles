@@ -98,3 +98,5 @@ nnoremap <Leader>r :action Run<CR>
 nnoremap <Leader>' :action Run<CR>
 
 nnoremap <Leader>d :action Debug<CR>
+
+nnoremap <Leader>ms :!tmux new -d "mvn spotless:apply" <CR>
