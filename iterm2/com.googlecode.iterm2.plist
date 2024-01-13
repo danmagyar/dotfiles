@@ -578,7 +578,7 @@
 	<key>Default Arrangement Name</key>
 	<string>Rainbow fullscreen</string>
 	<key>Default Bookmark Guid</key>
-	<string>884AEE83-D060-470F-91BA-3BD165B1A883</string>
+	<string>7F377E3A-9B96-4265-A6AE-06905B49F412</string>
 	<key>DisableFullscreenTransparency</key>
 	<false/>
 	<key>EnableAPIServer</key>
@@ -2577,7 +2577,7 @@ EOF \n</string>
 	<key>SuppressRestartAnnouncement</key>
 	<true/>
 	<key>TabStyleWithAutomaticOption</key>
-	<integer>4</integer>
+	<integer>5</integer>
 	<key>TabViewType</key>
 	<integer>0</integer>
 	<key>TimeBetweenTips</key>
