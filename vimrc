@@ -17,6 +17,7 @@ Plug 'mtdl9/vim-log-highlighting'                         " Vim syntax highlight
 Plug 'joshdick/onedark.vim'                               " A dark Vim/Neovim color scheme inspired by Atom's One Dark syntax theme.
 Plug 'sheerun/vim-polyglot'                               " A collection of language packs for Vim.
 Plug 'tpope/vim-fugitive'                                 " A Git wrapper for Vim.
+Plug 'shumphrey/fugitive-gitlab.vim'                      " Adds GitLab support to fugitive.vim.
 Plug 'tpope/vim-unimpaired'                               " Provides pairs of handy bracket mappings.
 Plug 'tpope/vim-repeat'                                   " Enable repeating supported plugin maps with `.`
 Plug 'tpope/vim-rhubarb'                                  " GitHub extension for fugitive.vim.
