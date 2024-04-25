@@ -61,6 +61,12 @@ call plug#end()
 
 
 "################ Plugin configs and maps ################
+"enable github copilot for commit messages and other filetypes
+let g:copilot_filetypes = {
+    \ 'gitcommit': v:true,
+    \ 'markdown': v:true,
+    \ 'yaml': v:true
+    \ }
 " use lightline plugin to display fancy onedark statusline with git branch
 let g:lightline = {
         \ 'colorscheme': 'one',
