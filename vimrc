@@ -465,7 +465,8 @@ command! -bang -nargs=? -complete=dir HiddenFiles
 nnoremap <Leader>log :set syntax=log<CR>
 
 " Leader + Shift+L to fuzzy browse commits in current branch
-nnoremap <Leader>plc :Commits<CR>
+nnoremap <Leader>plc :Commits!<CR>
+nnoremap <Leader>pl :Commits! --full-history --all --graph<CR>
 
 " open selected lines on github
 vnoremap <leader>og :GBrowse<cr>
