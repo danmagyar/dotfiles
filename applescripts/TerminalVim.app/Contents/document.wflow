@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>AMApplicationBuild</key>
-	<string>520</string>
+	<string>523</string>
 	<key>AMApplicationVersion</key>
 	<string>2.10</string>
 	<key>AMDocumentVersion</key>
@@ -51,19 +51,18 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>	tell application "iTerm"
-		create window with default profile
-		tell front window
-			tell current session
-				write text ("vim -c 'Goyo 150' " &amp;amp; quote &amp;amp; POSIX path of input &amp;amp; quote &amp;amp; "; exit")
-			end tell
-		end tell
-	end tell
+					<string>tell application "iTerm"
+    create window with default profile
+    tell front window
+        tell current session
+            write text "vim"
+        end tell
+    end tell
+end tell
 
-	tell application "System Events"
-		keystroke "f" using {command down, control down}
-	end tell
-end run</string>
+tell application "System Events"
+    keystroke "f" using {command down, control down}
+end tell</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunScript</string>
@@ -114,12 +113,10 @@ end run</string>
 						<string>0</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<integer>1</integer>
 				<key>location</key>
-				<string>309.000000:315.000000</string>
+				<string>669.000000:315.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
