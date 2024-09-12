@@ -51,18 +51,23 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>tell application "iTerm"
-    create window with default profile
-    tell front window
-        tell current session
-            write text "vim"
+					<string>on run {input, parameters}
+    tell application "iTerm"
+        create window with default profile
+        tell front window
+            tell current session
+                if (count of input) &gt; 0 then
+                    -- If input is provided, open the file in Vim
+                    set filePath to POSIX path of (item 1 of input)
+                    write text "vim " &amp; quote &amp; filePath &amp; quote
+                else
+                    -- If no input is provided, just open Vim
+                    write text "vim"
+                end if
+            end tell
         end tell
     end tell
-end tell
-
-tell application "System Events"
-    keystroke "f" using {command down, control down}
-end tell</string>
+end run</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunScript</string>
