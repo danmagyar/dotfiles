@@ -186,6 +186,9 @@ nSquashCommit(){
         git commit
 }
 
+########################### Github aliases ########################################
+alias cs='gh copilot suggest -t shell'
+
 ###########################  Oh my god, it's so fuzzy I'm gonna die ############################
 
 source ~/gitrepos/fzf-git.sh/fzf-git.sh
