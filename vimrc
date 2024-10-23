@@ -510,3 +510,7 @@ let g:ycm_filetype_blacklist = {}
 
 " Ctrl+b in insert mode to make text bold I'm about to write, i.e.: insert **** and move cursor to the middle
 inoremap <C-b> ****<left><left>
+
+
+inoremap <C-\> <Plug>(copilot-accept-word)
+
