@@ -2559,6 +2559,8 @@ EOF \n</string>
 	<true/>
 	<key>ShowPaneTitles</key>
 	<false/>
+	<key>SmartPlacement</key>
+	<false/>
 	<key>Snippets</key>
 	<array>
 		<dict>
@@ -2573,7 +2575,7 @@ EOF \n</string>
 	<key>SplitPaneDimmingAmount</key>
 	<real>0.42436873807251907</real>
 	<key>StretchTabsToFillBar</key>
-	<false/>
+	<true/>
 	<key>SuppressRestartAnnouncement</key>
 	<true/>
 	<key>TabStyleWithAutomaticOption</key>

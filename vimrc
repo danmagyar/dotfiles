@@ -67,6 +67,10 @@ let g:copilot_filetypes = {
     \ 'markdown': v:true,
     \ 'yaml': v:true
     \ }
+
+" enable gitlab support for fugitive
+let g:fugitive_gitlab_domains = ['https://gitlab.build-unite.unite.eu']
+
 " use lightline plugin to display fancy onedark statusline with git branch
 let g:lightline = {
         \ 'colorscheme': 'one',

@@ -48,3 +48,12 @@ context.personal.write=project:family or project:private
 news.version=2.6.0
 uda.blocks.type=string
 uda.blocks.label=Blocks
+context.AvD.read=project:AvD
+context.AvD.write=project:AvD
+
+
+# Define the custom report template
+report.custom.columns=status,id,age,priority,due,description,urgency
+report.custom.labels=Status,ID,Age,Priority,Due,Description,Urgency
+report.custom.sort=due+,priority-,urgency-
+# report.custom.filter=status:pending

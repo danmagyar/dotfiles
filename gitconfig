@@ -1,6 +1,6 @@
 [user]
     name = Daniel Magyar
-    email = daniel.laszlo.magyar@gmail.com
+    email = daniel.magyar@unite.eu
 
 [diff "pandoc"]
      textconv=pandoc --to=markdown
@@ -12,9 +12,13 @@
         pager = diff-so-fancy | less --tabs=4 -RFX
     autocrlf = false
     longpaths = true
+    quotepath = false
 
 [commit]
     #template = /Users/danielmagyar/.stCommitMsg
+
+[branch]
+    autosetuprebase = never # don't commit this one
 
 [merge]
     tool = vimdiff

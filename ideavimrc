@@ -66,8 +66,9 @@ nmap zr :action ExpandRegion<cr>
 nmap zA :action CollapseAllRegions<cr>
 nmap zR :action ExpandAllRegions<cr>
 
-" open source on github
-noremap <leader>og :action Github.Open.In.Browser<cr> \| :action GitLab.Open.In.Browser<cr>
+" open source on github or gitlab
+map <leader>og :action Github.Open.In.Browser<cr> \| :action GitLab.Open.In.Browser<cr>
+
 nmap <leader>vs :action SplitVertically<cr>
 
 nmap <leader>uh :action Vcs.RollbackChangedLines<cr>
@@ -83,6 +84,7 @@ nnoremap <Leader>2 :action SelectInProjectView<CR>
 noremap <Leader>3 :action ActivateStructureToolWindow<cr>
 
 nnoremap <Leader>plc :action Vcs.Show.Log<CR>
+nnoremap <Leader>pl :action Vcs.Show.Log<CR>
 
 " reset F1 mapping to open up javadoc popup in intellij
 noremap <F1> :action QuickJavaDoc<CR>
@@ -100,3 +102,12 @@ nnoremap <Leader>' :action Run<CR>
 nnoremap <Leader>d :action Debug<CR>
 
 nnoremap <Leader>ms :!tmux new -d "mvn spotless:apply" <CR>
+
+" open issuetracking Ticket for line
+nnoremap <Leader>ot :action GitToolBox.OpenIssueLinks<CR>
+
+" open github Copilot Chat
+nnoremap <Leader>cc :action ActivateGitHubCopilotChatToolWindow<CR>
+
+" jump to character
+nnoremap <Leader><Leader>s :action AceAction<CR>
