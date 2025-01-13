@@ -25,24 +25,35 @@ if [ -n "$start_from" ] && [ ! -d "$start_from" ]; then
   exit 1
 fi
 
-# Function to refresh a git repository
+handle_git_error() {
+  local repo_dir="$1"
+  local real_dir
+  real_dir="$(realpath "$repo_dir")"
+  echo "Error occurred in repository '$real_dir'."
+  echo "To continue from here, run:"
+  echo "$0 '$real_dir'"
+  exit 1
+}
+
 refresh_git_repo() {
   local repo_dir="$1"
   cd "$repo_dir" || return
+
   if git show-ref --quiet refs/heads/master; then
-    git switch master
+    git switch master || handle_git_error "$repo_dir"
   elif git show-ref --quiet refs/heads/main; then
-    git switch main
+    git switch main || handle_git_error "$repo_dir"
   else
     echo "No 'master' or 'main' branch found in $(pwd). Skipping pull."
     cd - > /dev/null
     return
   fi
-  git pull --rebase
+
+  git pull --rebase || handle_git_error "$repo_dir"
+
   cd - > /dev/null
 }
 
-# Recursive function to find and refresh git repositories
 find_and_refresh_git_repos_recursively() {
   for dir in "$1"/*; do
     if [ -d "$dir" ]; then
@@ -68,50 +79,4 @@ find_and_refresh_git_repos_recursively() {
   done
 }
 
-# Start the recursive search from the current directory
 find_and_refresh_git_repos_recursively "$(pwd)"
-
-
-##!/bin/bash
-#set -euo pipefail
-#
-#start_from="${1:-}"
-#found_start=false
-#
-#refresh_git_repo() {
-#  if git show-ref --quiet refs/heads/master; then
-#    git switch master
-#  elif git show-ref --quiet refs/heads/main; then
-#    git switch main
-#  else
-#    echo "No master or main branch found in $(pwd)"
-#    return
-#  fi
-#  git pull --rebase
-#}
-#
-#find_and_refresh_git_repos_recursively() {
-#  for dir in "$1"/*; do
-#    if [ -d "$dir" ]; then
-#      if [ -d "$dir/.git" ]; then
-#        if [ "$found_start" = false ]; then
-#          if [ "$(realpath $dir)" == "$start_from" ]; then
-#            found_start=true
-#          else
-#            echo "Skipping directory $dir"
-#            continue
-#          fi
-#        fi
-#        echo "Refreshing git repository in $dir"
-#        cd "$dir" || continue
-#        refresh_git_repo
-#        cd - > /dev/null || exit
-#      else
-#        find_and_refresh_git_repos_recursively "$dir"
-#      fi
-#    fi
-#  done
-#}
-#
-#
-#find_and_refresh_git_repos_recursively "$(pwd)"
