@@ -111,3 +111,5 @@ nnoremap <Leader>cc :action ActivateGitHubCopilotChatToolWindow<CR>
 
 " jump to character
 nnoremap <Leader><Leader>s :action AceAction<CR>
+
+nnoremap <Leader>mv :action GotoDeclaration<CR>

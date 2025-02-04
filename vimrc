@@ -51,6 +51,7 @@ Plug 'junegunn/limelight.vim'                             " Highlights the parag
 Plug 'dhruvasagar/vim-table-mode'                         " Automated table creator & formatter.
 Plug 'rakr/vim-one'                                       " Adaptation of one-light and one-dark color schemes from Atom.
 Plug 'github/copilot.vim'                                 " GitHub Copilot, an AI pair programmer, for Vim.
+Plug 'chrisbra/Colorizer'                                 " Colorize color strings in file.
 " A Vim plugin for the JavaScript formatter Prettier.
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install --frozen-lockfile --production',
