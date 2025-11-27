@@ -10,6 +10,10 @@ usage() {
 
 # Parse the starting directory from the first argument, if provided
 start_from="${1:-}"
+# Normalize the start_from path if provided
+if [ -n "$start_from" ]; then
+  start_from="$(realpath "$start_from" 2>/dev/null || echo "$start_from")"
+fi
 found_start=false
 
 # Check for help flag or incorrect number of arguments
@@ -61,7 +65,7 @@ find_and_refresh_git_repos_recursively() {
         local real_dir
         real_dir="$(realpath "$dir")"
         if [ "$found_start" = false ]; then
-          if [ -z "$start_from" ] || [ "$real_dir" == "$start_from" ]; then
+          if [ -z "$start_from" ] || [[ "$real_dir" == "$start_from"* ]]; then
             found_start=true
           else
             echo "Skipping git repository '$real_dir' (before start point)"
